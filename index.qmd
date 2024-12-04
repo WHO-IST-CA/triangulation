@@ -1,6 +1,8 @@
 ---
 title: "Tutoriel sur l'ajustement des populations cibles de la vaccination de routine en Rèpublique Démocratique du Congo"
 format: live-html
+resources:
+  - data
 engine: knitr
 date-modified: last-modified
 webr:
