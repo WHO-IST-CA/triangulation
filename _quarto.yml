@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: docs
+
+
+website:
+  title: Atelier de triangulation des données de population de différentes sources en vue de l’ajustement des cibles et de détermination d’une méthode de suivi des couvertures vaccinales en routine
+  favicon: /static/img/who-emblem.png
+  site-url: https://who-ist-ca.github.io/atelier_triangulation/
+  cookie-consent: true
+
+
+
+  navbar:
+    logo: /static/img/logo-en.svg
+    background: light
+    foreground: dark
+    right:
+      - text: "Accueil"
+        href: index.qmd
+        icon: bi-house-door-fill
+      - text: Enregistrements
+        icon: input-cursor-text
+
+
+
+  page-footer:
+    left: |
+      {{< fa regular copyright >}} WHO-IST CA 2024<br>
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org)
+    right:
+      - text: <img src = "static/img/logo-en.svg"  alt = "WHO-AFRO" width = "250" height = "62.5">&nbsp;
+        href: https://www.afro.who.int/
+        aria-label: WHO-AFRO
+      - text: <img src = "static/img/unicef2.png" alt = "Unicef" width = "150" height = "37.5" img>
+        href: https://www.unicef.org/wca/
+        aria-label: Unicef-WCA
+
+
+
+
+
+format:
+  html:
+    theme: dinty.scss
+    css: styles.css
+    highlight-style: kate
+    code-block-bg: true
+    code-block-border-left: "#78c2ad"
+    code-fold: true
+    code-tools: false
+    fig-width: 9
+    fig-height: 6
+    fig-align: center
+    other-links:
+      - text: "Telecharger Agenda"
+        icon: download
+        href: meeting.ics
+
+execute:
+  freeze: auto
+
+lang: fr
+
+language:
+  fr:
+    title-block-published: "Mis à jour"
