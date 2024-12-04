@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tutoriel sur l’ajustement des populations cibles de la vaccination de routine en Rèpublique Démocratique du Congo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href=".//static/img/who-emblem.png" rel="icon" type="image/png">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./static/img/logo-en.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text">Tutoriel</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Aller à</h2>
+   
+  <ul>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs:</a></li>
+  <li><a href="#outils-de-latelier" id="toc-outils-de-latelier" class="nav-link" data-scroll-target="#outils-de-latelier">Outils de l’atelier</a></li>
+  <li><a href="#structure-du-tutoriel" id="toc-structure-du-tutoriel" class="nav-link" data-scroll-target="#structure-du-tutoriel">Structure du tutoriel</a></li>
+  <li><a href="#revue-des-conditions-de-validité-de-lestimation" id="toc-revue-des-conditions-de-validité-de-lestimation" class="nav-link" data-scroll-target="#revue-des-conditions-de-validité-de-lestimation">Revue des conditions de validité de l’estimation</a></li>
+  <li><a href="#vérification-de-la-disponibilité-des-principales-données-pour-réaliser-lestimation" id="toc-vérification-de-la-disponibilité-des-principales-données-pour-réaliser-lestimation" class="nav-link" data-scroll-target="#vérification-de-la-disponibilité-des-principales-données-pour-réaliser-lestimation">Vérification de la disponibilité des principales données pour réaliser l’estimation</a></li>
+  <li><a href="#estimation-des-populations-cibles-en-utilisant-les-données-imputées-de-lecv-2023-et-les-estimation-de-lihme" id="toc-estimation-des-populations-cibles-en-utilisant-les-données-imputées-de-lecv-2023-et-les-estimation-de-lihme" class="nav-link" data-scroll-target="#estimation-des-populations-cibles-en-utilisant-les-données-imputées-de-lecv-2023-et-les-estimation-de-lihme">Estimation des populations cibles en utilisant les données imputées de l’ECV 2023 et les Estimation de l’IHME</a></li>
+  <li><a href="#estimation-des-taux-de-variabilité" id="toc-estimation-des-taux-de-variabilité" class="nav-link" data-scroll-target="#estimation-des-taux-de-variabilité">Estimation des taux de variabilité</a></li>
+  <li><a href="#utilisation-du-taux-de-variation-des-populations-pour-la-prise-de-décision" id="toc-utilisation-du-taux-de-variation-des-populations-pour-la-prise-de-décision" class="nav-link" data-scroll-target="#utilisation-du-taux-de-variation-des-populations-pour-la-prise-de-décision">Utilisation du taux de variation des populations pour la prise de décision</a>
+  <ul class="collapse">
+  <li><a href="#scenario-1-les-taux-de-variation-avec-lecv-et-ihme-sont-tous-les-deux-compris-entre--10-et-10" id="toc-scenario-1-les-taux-de-variation-avec-lecv-et-ihme-sont-tous-les-deux-compris-entre--10-et-10" class="nav-link" data-scroll-target="#scenario-1-les-taux-de-variation-avec-lecv-et-ihme-sont-tous-les-deux-compris-entre--10-et-10">Scenario 1: Les taux de variation avec l’ECV et IHME sont tous les deux compris entre -10 et 10%</a></li>
+  <li><a href="#scenario-2-le-taux-de-variation-de-lecv-est-compris-entre--10-et-10-alors-que-celui-de-lihme-ne-lest-pas" id="toc-scenario-2-le-taux-de-variation-de-lecv-est-compris-entre--10-et-10-alors-que-celui-de-lihme-ne-lest-pas" class="nav-link" data-scroll-target="#scenario-2-le-taux-de-variation-de-lecv-est-compris-entre--10-et-10-alors-que-celui-de-lihme-ne-lest-pas">Scenario 2: Le taux de variation de l’ECV est compris entre -10 et 10% alors que celui de l’IHME ne l’est pas</a></li>
+  <li><a href="#scenario-3-les-deux-taux-de-variation-sont-inférieurs-à--10" id="toc-scenario-3-les-deux-taux-de-variation-sont-inférieurs-à--10" class="nav-link" data-scroll-target="#scenario-3-les-deux-taux-de-variation-sont-inférieurs-à--10">Scenario 3: Les deux taux de variation sont inférieurs à -10%</a></li>
+  <li><a href="#scenario-4-les-deux-taux-de-variation-sont-supérieur-à-10" id="toc-scenario-4-les-deux-taux-de-variation-sont-supérieur-à-10" class="nav-link" data-scroll-target="#scenario-4-les-deux-taux-de-variation-sont-supérieur-à-10">Scenario 4: Les deux taux de variation sont supérieur à 10%</a></li>
+  <li><a href="#scenario-5-les-taux-de-variations-sont-dans-des-directions-opposés" id="toc-scenario-5-les-taux-de-variations-sont-dans-des-directions-opposés" class="nav-link" data-scroll-target="#scenario-5-les-taux-de-variations-sont-dans-des-directions-opposés">Scenario 5: les taux de variations sont dans des directions opposés</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  </ul></li>
+  <li><a href="#estimation-des-population-cibles-2024-et-2025" id="toc-estimation-des-population-cibles-2024-et-2025" class="nav-link" data-scroll-target="#estimation-des-population-cibles-2024-et-2025">Estimation des population cibles 2024 et 2025</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tutoriel sur l’ajustement des populations cibles de la vaccination de routine en Rèpublique Démocratique du Congo</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modifié</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">4 décembre 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-autorun="true">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJjb2RlIjoiXG5saWJyYXJ5KHJlYWR4bClcblxubGlicmFyeShqYW5pdG9yKVxuXG5saWJyYXJ5KGhlcmUpXG5cbmxpYnJhcnkodGlkeXZlcnNlKVxuXG5wb3AgPC0gcmVhZF9leGNlbChoZXJlKFwiZGF0YVwiLCBcImFkanVzdGVkLnhsc3hcIiksIHNoZWV0ID0gNCwgc2tpcCA9IDQpfD5cbiAgIGphbml0b3I6OmNsZWFuX25hbWVzKCl8PlxuICAgcmVuYW1lKHpvbmVfc2FudGUgPSBkaXN0cmljdCwgc3Vydml2YW50c19hZG1pbiA9IHN1cnZpdmFudHNfcm91dGluZSwgY3ZfZHRjMV9hZG1pbiA9IGN2X2R0YzEsIGN2X2R0YzFfZWN2ID0gY291dmVydHVyZV9lY3YsIGN2X2R0YzFfaWhtZSA9IGNvdXZlcnR1cmVfaWhtZSl8PlxuICBtdXRhdGUoem9uZV9zYW50ZT0gc3RyX3JlbW92ZSh6b25lX3NhbnRlLCBcIl5cXFxcUyogXCIpLCBwcm92aW5jZSA9IHN0cl9yZW1vdmUocHJvdmluY2UsIFwiXlxcXFxTKiBcIiksXG4gICAgICAgICB6b25lX3NhbnRlID0gc3RyX3JlbW92ZSh6b25lX3NhbnRlLCBcIlpvbmUgZGUgU2FudMOpXCIpLCBwcm92aW5jZSAgPSBzdHJfcmVtb3ZlKHByb3ZpbmNlLCBcIlByb3ZpbmNlXCIpKSAlPiVcbiAgbXV0YXRlKHpvbmVfc2FudGUgPSB0cmltd3Moem9uZV9zYW50ZSwgXCJib3RoXCIpLFxuICAgICAgICAgcHJvdmluY2UgPSB0cmltd3MocHJvdmluY2UsIFwiYm90aFwiKSxcbiAgICAgICAgIHByb3ZpbmNlID0gc3RyX3RvX2xvd2VyKHN0cl9yZXBsYWNlX2FsbChwcm92aW5jZSwgXCIgXCIsIFwiX1wiKSksXG4gICAgICAgICBwcm92aW5jZSA9IHN0cl9yZXBsYWNlX2FsbChwcm92aW5jZSwgXCItXCIsIFwiX1wiKSxcbiAgICAgICAgIHpvbmVfc2FudGUgPSBzdHJfdG9fbG93ZXIoc3RyX3JlcGxhY2VfYWxsKHpvbmVfc2FudGUsIFwiIFwiLCBcIl9cIikpLFxuICAgICAgICAgem9uZV9zYW50ZSA9IHN0cl9yZXBsYWNlX2FsbCh6b25lX3NhbnRlLCBcIi1cIiwgXCJfXCIpKSAlPiUgXG4gIG11dGF0ZShzdXJ2aXZhbnRzX2FkbWluID0gYXMubnVtZXJpYyhzdXJ2aXZhbnRzX2FkbWluKSlcblxuXG5teV90aGVtZSA8LSB0aGVtZV9jbGFzc2ljKGJhc2VfZmFtaWx5ID0gXCJTcGxpbmUgU2Fuc1wiKSArXG4gIHRoZW1lKFxuICAgIHRleHQgPSBlbGVtZW50X3RleHQoY29sb3IgPSBcImdyYXkyMFwiLCBzaXplID0gMTIuNSksXG4gICAgcmVjdCA9IGVsZW1lbnRfYmxhbmsoKSwgIyB0cmFuc3BhcmVudCBiYWNrZ3JvdW5kXG4gICAgcGxvdC50aXRsZSA9IChlbGVtZW50X3RleHQoZmFjZSA9IFwiYm9sZFwiLCBoanVzdCA9IDAuNSwgc2l6ZSA9IDExKSksXG4gICAgcGxvdC5zdWJ0aXRsZSA9IChlbGVtZW50X3RleHQoaGp1c3QgPSAwLjUsIHNpemUgPSA4LCBjb2xvciA9IGFscGhhKFwiYmxhY2tcIiwgMC43KSkpLFxuICAgIHBsb3QuY2FwdGlvbiA9IGVsZW1lbnRfdGV4dChzaXplID0gNi41LCBjb2xvciA9IFwiZ3JheTUwXCIsIGhqdXN0ID0gMSksXG4gICAgbGVnZW5kLnBvc2l0aW9uID0gXCJib3R0b21cIixcbiAgICBsZWdlbmQudGV4dCA9IGVsZW1lbnRfdGV4dChzaXplID0gOCksXG4gICAgbGVnZW5kLmtleS5zaXplID0gdW5pdCgxLCBcImxpbmVcIiksXG4gICAgYXhpcy50aXRsZSA9IGVsZW1lbnRfdGV4dChjb2xvciA9IGFscGhhKFwiYmxhY2tcIiwgMC44KSwgc2l6ZSA9IDE0KSxcbiAgICBheGlzLnRleHQgPSBlbGVtZW50X3RleHQoY29sb3IgPSBhbHBoYShcImdyYXkyMFwiLCAwLjcpLCBzaXplID0gMTIpLFxuICAgIGF4aXMubGluZSA9IGVsZW1lbnRfbGluZShjb2xvciA9IFwiZ3JheTQwXCIsIGxpbmV3aWR0aCA9IDAuNSksXG4gICAgYXhpcy5saW5lLnkgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgcGFuZWwuZ3JpZC5tYWpvciA9IGVsZW1lbnRfbGluZShjb2xvciA9IGFscGhhKFwiZ3JheTUwXCIsIDAuMSksIGxpbmV3aWR0aCA9IDAuMjUpLFxuICAgIHN0cmlwLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9IGFscGhhKFwiIzAwNzBjMFwiLCAxKSwgY29sb3IgPSBcInRyYW5zcGFyZW50XCIpLFxuICAgIHN0cmlwLnRleHQgPSBlbGVtZW50X3RleHQoZmFjZSA9IFwiYm9sZFwiLCBjb2xvdXIgPSBcIndoaXRlXCIpLFxuICAgIHBhbmVsLnNwYWNpbmcueCA9IHVuaXQoMywgXCJtbVwiKSxcbiAgICB0aXRsZSA9IGVsZW1lbnRfdGV4dChmYWNlID0gXCJib2xkXCIpXG4gIClcbnRoZW1lX3NldChteV90aGVtZSlcblxub3B0aW9ucyhzY2lwZW4gPSA5OTkpIiwiYXR0ciI6eyJ3YXJuaW5nIjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZWRpdCI6ZmFsc2UsImF1dG9ydW4iOnRydWUsIm1lc3NhZ2UiOmZhbHNlLCJlY2hvIjpmYWxzZX19
+</script>
+</div>
+</div>
+<p>Bienvenu au tutoriel sur la triangulation des données de population de différentes sources en vue de l’ajustement des cibles et de détermination d’une méthode de suivi des couvertures vaccinales en routine.</p>
+<section id="objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs">Objectifs:</h2>
+<p>A la fin de ce tutoriel, les particpants devront être capables de:</p>
+<ul>
+<li><p>Estimer les populations de nourissons survivants et des naissances vivantes en utilisant les données de couvertures vaccinales issues des enquêtes de couverture vaccinales (ECV)</p></li>
+<li><p>Définir les conditions de validité des estimations des populations cibles</p></li>
+<li><p>Estimer le taux de variablilité et les decrire les différences entre les différentes populations cibles</p></li>
+<li><p>Classer des zones de santé selon couverture vaccinal par ECV, couverture administrative avec dénominateurs DHIS2 et avec dénominateurs ajustés, et par modélisation mathématique (IHME) pour définir des actions de suivi et évaluation ciblées selon scenarios de niveau de couverture et certitude de classement</p></li>
+</ul>
+</section>
+<section id="outils-de-latelier" class="level2">
+<h2 class="anchored" data-anchor-id="outils-de-latelier">Outils de l’atelier</h2>
+<p>Pour cet atelier les partipants devront travailler avec les feuilles de calcul excel notamment: le fichier <img src="&quot;downlaod/consolidated_pop_and_vaccination_data.xlsx&quot;" class="img-fluid" alt="consolidated_pop_and_vaccination_data.xlsx"> qui contient les sources de données nécessaires pour les estimations et le fichier <img src="&quot;downlaod/Tableau_adjustement_Cibles_PEV.xlsx&quot;" class="img-fluid" alt="Tableau_adjustement_Cibles_PEV.xlsx"></p>
+<p>Le fichier <code>consolidated_pop_and_vaccination_data.xlsx</code> comprend: - une feuille <code>ecv2023_0_11</code> qui contient les données du DHIS 2 et des couvertures de l’ECV chez les 0-11 mois - une feuille <code>ecv2023_12_23</code> qui contient les données du DHIS 2 et des couvertures de l’ECV chez les 12-23 mois - une feuiile <code>Pop_dhis2_ihme_dtc1</code> qui contient les populations worldpop, et les couvertures ajustées de l’IHME au DTC-1 - une feuille <code>ihme_dtc1_no_DHS</code> qui comprend les couvertures au DTC-1 de l’IHME non ajustées à l’enquête démographique de santé (EDS)</p>
+<p>Le fichier <code>Tableau_adjustement_Cibles_PEV.xlsx</code> qui comprends:</p>
+<ul>
+<li>Une description succincte de la méthodologie</li>
+<li>Une feuille de calcul pour les survivants</li>
+<li>Une feuille de calcul pour les naissances</li>
+<li>Une feuille d’analyse de sensibilité pour comparer les différentes estimations de populations cibes.</li>
+</ul>
+</section>
+<section id="structure-du-tutoriel" class="level2">
+<h2 class="anchored" data-anchor-id="structure-du-tutoriel">Structure du tutoriel</h2>
+<p>Ce tutoriel est divisé en</p>
+<ul>
+<li>Revue des conditions de validité de l’estimation</li>
+<li>Vérification de la disponibilité des principales données pour réaliser l’estimation</li>
+<li>Estimation des survivants et naissances avec les différentes couvertures</li>
+<li>Estimation des taux de variations</li>
+<li>Classification des scénari</li>
+<li>Estimation du taux de mortalité infantile</li>
+<li>Estimation des populations cibles de l’année 2024 et 2025</li>
+</ul>
+</section>
+<section id="revue-des-conditions-de-validité-de-lestimation" class="level2">
+<h2 class="anchored" data-anchor-id="revue-des-conditions-de-validité-de-lestimation">Revue des conditions de validité de l’estimation</h2>
+<p>L’ajustement de la taille des populations de la vaccination repose éssentiellement sur ** l’estimation de la couverture vaccinale et le nombre de vaccinés rapporté par le district de santé **. Ainsi, l’utilisation de ces outils dépend de la validité des résultats des enquêtes et de la qualité des données de la vaccination de routine. De ce fait il est important de comprendre les les modèles statistiques qui soutendent les estimations des couvertures vaccinales; il s’agit notamment de comprendre le processus de génération des données, la validitité des propriétés statistiques des modèles utilisés, l’impact des différents biais (rappel, non reponse, généralisation des résultats de l’enquête, …) etc. La compréhension des limites des différentes estimations de couvertures vaccinales et de populations permettront d’apporter les nuances nécéssaires dans le processus de triangulation.</p>
+<p>Dans le cadre général des programme de vaccination. la couverture vaccinales est estimée par <span class="math display">\[ \text{cv} = \frac{\text{nombre de vaccinés (n)}}{\text{population cible (N)}}\]</span></p>
+<p>En supposant que les estimations des couvertures vaccinales par les différentes enquêtes ou des différentes sources de données soient non biaisèes on peut substittuer la couverture vaccinale de la population <span class="math inline">\(\text{cv}\)</span> par la couverture vaccinale <span class="math inline">\(cv'\)</span> issue des estimations des enquêtes. On obtient donc <span class="math inline">\(cv' = \frac{\text{n}}{N}\)</span> qui est l’estimation de la couverture vaccinale. En faisant usage de cette estimation de la couverture vaccinale, on peut estimer la population cible <span class="math inline">\(N'\)</span> qui est la population cible ajustée sur la couverture vaccinale <span class="math display">\[ N' = \frac{\text{n}}{cv'}\]</span> Cette estimation est la base de la correction des population cible en utilisant les estimations de couvertures vaccinales.</p>
+</section>
+<section id="vérification-de-la-disponibilité-des-principales-données-pour-réaliser-lestimation" class="level2">
+<h2 class="anchored" data-anchor-id="vérification-de-la-disponibilité-des-principales-données-pour-réaliser-lestimation">Vérification de la disponibilité des principales données pour réaliser l’estimation</h2>
+<p>Avant de passer à l’estimation des populations cibles, il faut se rassurer que les données nécéssaires soient disponibles et non aberrantes. Ainsi donc il est opportun de se rassurer dans un premier temps l’exhaustivité des différents zones de santé dans toutes les sources de données: populations DHIS 2, couvertures ECV &amp; IHME, et données de vaccination de routine. En RDC, il existe 519 zones de santé, il faudrait se rassurer que dans chacune des differentes source de données que les districts de santé ne soient pas en doublon et que le total de district de santé soit égal à 519. Après avoir verifier l’exhaustivité des districts dans les differentes sources de données, il est impératif de verifier l’adéquacité des différentes données à savoir les couvertures vaccinales avec leurs intervalles de confiances, les populations cibles, et les données sur le nombre de vaccinés. Pour chacune de ces variables, il faut s’assurer qu’elles sont non nulles et non aberrantes. On devra donc verifier pour chacune des variables qu il n y ait aucune couverture manquante, aucune couverture vaccinale à 0% et aucun district avec aucun vacciné. On peut faire usage des filtres sur Excel afin de verifier chacune des variables comme le montre la <strong>?@fig-data</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-data-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/verif/datasources.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="figure&nbsp;1: Verification des sources de données"><img src="img/verif/datasources.gif" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;1: Verification des sources de données
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-data-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/verif/assess.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="figure&nbsp;2: Utilisation des filtres pour identifier les valeurs aberrantes et les valeurs manquantes"><img src="img/verif/assess.gif" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;2: Utilisation des filtres pour identifier les valeurs aberrantes et les valeurs manquantes
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Après avoir évaluer la qualité des données, il en ressort que les zones de santé de Damas, Drodro, Lolwa, Bambo, Binza, Birambizo, Katoyi, Kibirizi, Mweso, et Lowa n’ont pas de données sur les couvertures vaccinales aux BCG et DTC-1 lors de l’enquête de couverture vaccinale de 2023. Que faire donc en l’absence des données de couvertures vaccinales de l’ECV 2023. On pourrait: - Imputer la valeur de la cv par celle de la précécente année - Imputer la valeur de la cv par celle de la moyenne de la province - Imputer la Valeur de la cv par celle d’une zone de santé proche ayant les caractéristiques similaires</p>
+<p>Pour cet exercice, Nous avons utilisés les résultats de de l’ECV 2021 pour les zones de santé de Damase, Lolwa, Binza, Birambizo, Katoyi, Kibirizi, et Mweso. Pour Bambo nous avons imputé par les résultats de 2022, et enfin pour la zone de santé de Drodo nous avons imputé les cv manquantes par celle de la zone de santé de Rethy de 2023. Il est aussi à noter que pour certaines estimation de l’ECV il y a pas de valeur au niveau des intervalles de confiance: il s’agit des districts qui ont des couvertures à 1(100%), il faudrait donc remplacer les valeurs de l’intervalle de confiance absentes par 1(100%).</p>
+</section>
+<section id="estimation-des-populations-cibles-en-utilisant-les-données-imputées-de-lecv-2023-et-les-estimation-de-lihme" class="level2">
+<h2 class="anchored" data-anchor-id="estimation-des-populations-cibles-en-utilisant-les-données-imputées-de-lecv-2023-et-les-estimation-de-lihme">Estimation des populations cibles en utilisant les données imputées de l’ECV 2023 et les Estimation de l’IHME</h2>
+<p>Nous allons pour cet exercice demontrer comment estimer les populations cibles des survivants, la procédure est la même de que l’estimation de naissance vivante. Pour l’estimation de des survivants on utilisera les couvertures au DTC1 et pour les naissances vivantes il faudra utiliser les couvertures au BCG. Afin d’estimer les nourrissons survivants il faudrait: - Ouvrir le fichier source des données et aller sur la feuille ecv2023_0_11 - Identifier les colonnes avec les informations sur la province, zone de santé, nourrissons survivants 2024, couvertures en DTC1 et DTC3 avec leurs intervalles de confiance - Ouvrir le fichier de calcul des populations ajustées - Copier les informations du fichier ecv2023_0_11 dans les colonnes correspondantes du fichier du calcul des populations</p>
+<p>La <strong>?@fig-fill</strong> montre chaque étape de remplissage de la feuille de calcul pour l’estimation des population.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-fill-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_district.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="figure&nbsp;3: Remplissage des informations du district"><img src="img/survivants/input_district.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;3: Remplissage des informations du district
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-fill-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_year.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="figure&nbsp;4: Remplissage de l’année"><img src="img/survivants/input_year.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;4: Remplissage de l’année
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-fill-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_admindata2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="figure&nbsp;5: Remplissage des données administratives (nombre de vaccinés, populations cibles DHIS 2)"><img src="img/survivants/input_admindata2.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;5: Remplissage des données administratives (nombre de vaccinés, populations cibles DHIS 2)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-fill-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_ecv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="figure&nbsp;6: Remplissage des couvertures en DTC1 de l’ECV"><img src="img/survivants/input_ecv.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;6: Remplissage des couvertures en DTC1 de l’ECV
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-fill-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_ecv3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="figure&nbsp;7: Remplissage des Intervalles de confiance de la couverture en DTC1 de l’ECV"><img src="img/survivants/input_ecv3.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;7: Remplissage des Intervalles de confiance de la couverture en DTC1 de l’ECV
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-fill-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fill-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/input_ihme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="figure&nbsp;8: Remplissage des couvertures en DTC1 de IHME"><img src="img/survivants/input_ihme.png" class="img-fluid figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fill-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;8: Remplissage des couvertures en DTC1 de IHME
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Lorsque toute les données nécéssaires à l’estimation on peut alors calculer les diffèrentes populations. Il convient de rappeler que la couverture vaccinale est calculée par <span class="math inline">\(\text{cv} = \frac{\text{nombre de vaccinés (n)}}{\text{population cible (N)}}\)</span> et l’estimation de la population ajustée est définie par <span class="math inline">\(N' = \frac{\text{n}}{cv'}\)</span>. De ce fait pour calculer la couverture vaccinale au DTC1 on divisera les données de la colone <code>D</code> allant de <code>D5</code> à <code>D523</code> par celles de la colonne <code>F</code> allant de<code>F5</code> à <code>F523</code>. Pour le DTC3: <code>E5</code>:<code>E523</code> divisé par <code>F5</code>:<code>F523</code>. Pour estimer les populations de nourissons survivants ajustées on devra divisé la colone <code>D5:D523</code> par <code>I5:I523</code>, similairement on estimerait les extrêmes grace aux bornes de l’intervalle de confiance avec les quotients <code>D5:D523/J5:J523</code> et <code>D5:D523/K5:K523</code>. Enfin pour estimer la population en utilisant les données de l’IHME on fera le quotien <code>D5:D523/S5:S523</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-pop-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pop-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/pop_ecv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="figure&nbsp;9: Estimation des populations de nourrissons survivants ajustées à partir des CV DTC1 de l’ECV 2023"><img src="img/survivants/pop_ecv.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pop-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;9: Estimation des populations de nourrissons survivants ajustées à partir des CV DTC1 de l’ECV 2023
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-pop-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pop-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/survivants/pop_ihme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="figure&nbsp;10: Estimation des populations de nourrissons survivants ajustées à partir des CV au DTC1 de l’IHME"><img src="img/survivants/pop_ihme.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pop-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;10: Estimation des populations de nourrissons survivants ajustées à partir des CV au DTC1 de l’IHME
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="estimation-des-taux-de-variabilité" class="level2">
+<h2 class="anchored" data-anchor-id="estimation-des-taux-de-variabilité">Estimation des taux de variabilité</h2>
+<p>Maintenant que les populations ajustées sont estimées, il important de quantifier de combien ces nouvelles populations sont différentes des populations administratives. Pour ce faire on pourrait estimer un taux de variation <span class="math display">\[\text{Tx} = \frac{\text{Population Administrative(N)- Population Ajustée}(N')}{\text{Population Administrative(N)}}\]</span></p>
+<p>qui mesure en pourcentage la difference entre la population ajustée et la population de routine. Afin de calculer les taux de variation pour chacune des zones de santé entre la population ECV et la population administrative on utilisera les colones F et O pour la zone de santé i dans la feuille de calcul excel <span class="math inline">\(\text{Tx}_i = \frac{(F_i - O_i)}{F_i}\)</span> et pour les populations IHME ce sera plus tot <span class="math inline">\(\text{Tx}_i = \frac{(F_i - V_i)}{F_i}\)</span>. Les taux de variations aux intervalles de confiances doivent être estimés de façon similaire. <span class="math inline">\(\text{Tx}\)</span> n’est borné ni dans le sens négatif, ni dans le sens positif. Toutefois quand ce taux est inférieur à <code>0</code> il indique la population administrative doit être augmentée et lorsqu’il est positif, la population administrative devra être réduite.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-var-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-var-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/variation/variation_ecv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="figure&nbsp;11: Estimation du Taux de variation entre les populations administratives et les populations ajustées ECV 2023"><img src="img/variation/variation_ecv.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-var-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;11: Estimation du Taux de variation entre les populations administratives et les populations ajustées ECV 2023
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-var-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-var-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/variation/variation_ihme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="figure&nbsp;12: Estimation du Taux de variation entre les populations administratives et les populations ajustées IHME 2023"><img src="img/variation/variation_ihme.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-var-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+figure&nbsp;12: Estimation du Taux de variation entre les populations administratives et les populations ajustées IHME 2023
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="utilisation-du-taux-de-variation-des-populations-pour-la-prise-de-décision" class="level2">
+<h2 class="anchored" data-anchor-id="utilisation-du-taux-de-variation-des-populations-pour-la-prise-de-décision">Utilisation du taux de variation des populations pour la prise de décision</h2>
+<p>Après l’estimation du taux de variation, il y a trois types de decisions qui doivent être prises :</p>
+<ul>
+<li>Continuer à utiliser les populations administratives</li>
+<li>Revoir à la hausse les populations administratives</li>
+<li>Revoir à la baisse les populations administratives.</li>
+</ul>
+<p>Le taux de variation est un outil important pour la prise de décision. Dans cet exercice il est important de prendre en considération :</p>
+<ul>
+<li><strong>Les implications pratiques et logistiques liées à l’ajustement des populations (ajout ou retrait)</strong></li>
+<li><strong>La validité du modèle statistique de l’estimation dans la zone de santé (Dans les conditions de la zone de santé l’ECV est il plus fiable que l’estimation de l’IHME?)</strong></li>
+<li><strong>La comparaison entre les naissances vivantes ajustées et les survivants ajustés</strong></li>
+</ul>
+<p>Différents scénari sont alors envisagés pour la prise de décision:</p>
+<ul>
+<li>Scenario 1: Les taux de variation avec l’ECV et IHME sont tous les deux compris entre -10 et 10%</li>
+<li>Scenario 2: Le taux de variation de l’ECV est compris entre -10 et 10% alors que celui de l’IHME ne l’est pas</li>
+<li>Scenario 3: Les deux taux de variation sont inférieurs à -10%</li>
+<li>Scenario 4: Les deux taux de variation sont supérieur à 10%</li>
+<li>Scenario 5: Toutes les zones santé qui ne sont pas concernés par les scénari précédents</li>
+</ul>
+<p>Avant de passer à la conduite à tenir pour chacun de ces scenari, il faudrait prendre en compte que l’ECV 2023 fera considéré comme <em>“l’étalon d’or”</em>.</p>
+<section id="scenario-1-les-taux-de-variation-avec-lecv-et-ihme-sont-tous-les-deux-compris-entre--10-et-10" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-1-les-taux-de-variation-avec-lecv-et-ihme-sont-tous-les-deux-compris-entre--10-et-10">Scenario 1: Les taux de variation avec l’ECV et IHME sont tous les deux compris entre -10 et 10%</h3>
+<p>Dans le cas où les taux de variation sont compris entre -10% et 10%, on considèrera que la population administrative est acceptable, de ce fait on ne procèdera pas à un ajustement de celle ci.</p>
+</section>
+<section id="scenario-2-le-taux-de-variation-de-lecv-est-compris-entre--10-et-10-alors-que-celui-de-lihme-ne-lest-pas" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-2-le-taux-de-variation-de-lecv-est-compris-entre--10-et-10-alors-que-celui-de-lihme-ne-lest-pas">Scenario 2: Le taux de variation de l’ECV est compris entre -10 et 10% alors que celui de l’IHME ne l’est pas</h3>
+<p>Dans cas d’espèce, on maintiendra la même conduite à tenir que dans le scenario numéro 1.</p>
+</section>
+<section id="scenario-3-les-deux-taux-de-variation-sont-inférieurs-à--10" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-3-les-deux-taux-de-variation-sont-inférieurs-à--10">Scenario 3: Les deux taux de variation sont inférieurs à -10%</h3>
+<p>Dans le cadre du scénario 3 on devrait augmenter la population administrative au pourcentage donné par l’ECV, toutefois cette augmentation devra être inférieure ou egale à 20%.</p>
+</section>
+<section id="scenario-4-les-deux-taux-de-variation-sont-supérieur-à-10" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-4-les-deux-taux-de-variation-sont-supérieur-à-10">Scenario 4: Les deux taux de variation sont supérieur à 10%</h3>
+<p>Dans le cadre du scénario 3 on devrait être réduire la population administrative au pourcentage donné par l’ECV, toutefois cette reduction devra être inférieure ou egale à 20% et la population ajustée ne devra pas être inférieure au nombre de vaccinés.</p>
+</section>
+<section id="scenario-5-les-taux-de-variations-sont-dans-des-directions-opposés" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-5-les-taux-de-variations-sont-dans-des-directions-opposés">Scenario 5: les taux de variations sont dans des directions opposés</h3>
+<p>Ici les decisions doivent être prise au cas par cas selon l’expertise, la fiabilité statistique de l’estimation des couvertures, et tout autre paramètre important. Dans ce tutoriel nous avons décidé de prendre à chaque fois les décisions en fonction de l’ECV.</p>
+<p>Afin de mettre en oeuvre ces différents scénario, nous allons utiliser R les codes et les experimentations sont fournis avec une session interactive pour les utilisateurs.</p>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<p>Avant de procéder à la mise en place des différents scénario va dabord effectuer une exploration des données.</p>
+<p>On va dabord explorer la distribution des couvertures vaccinales</p>
+<div class="cell">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJjb2RlIjoiXG5cbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShnZ3N0YXRzcGxvdClcbiMgQWRtaW4gdnMgRUNWXG5cbnBvcCB8PiBwaXZvdF9sb25nZXIoY29scyA9IGMoY3ZfZHRjMV9hZG1pbiwgY3ZfZHRjMV9lY3YpLCBuYW1lc190byA9IFwic291cmNlXCIsIHZhbHVlc190byA9ICdjdicpJT4lXG4gIG11dGF0ZShjdiA9IDEwMCpjdiklPiVcbmdnYmV0d2VlbnN0YXRzKFxuICBkYXRhICA9IC4sXG4gIHggICAgID0gc291cmNlLFxuICB5ICAgICA9IGN2LFxuICB0aXRsZSA9IFwiRGlzdHJpYnV0aW9uIGRlcyBjb3V2ZXJ0dXJlcyB2YWNjaW5hbGVzIGFkbWluaXN0cmF0aXZlcyBldCBkZSBsJ0VDViAyMDIzXCJcbikrIGxhYnMoXG4gIFxuICB4ID0gXCJcIiwgeSA9IFwiQ291dmVydHVyZSBWYWNjaW5hbGVcIlxuKVxuXG4jIEFkbWluIHZzIElITUUgXG5cbnBvcCB8PiBwaXZvdF9sb25nZXIoY29scyA9IGMoY3ZfZHRjMV9hZG1pbiwgY3ZfZHRjMV9paG1lKSwgbmFtZXNfdG8gPSBcInNvdXJjZVwiLCB2YWx1ZXNfdG8gPSAnY3YnKSU+JVxuICBtdXRhdGUoY3YgPSAxMDAqY3YpJT4lXG5nZ2JldHdlZW5zdGF0cyhcbiAgZGF0YSAgPSAuLFxuICB4ICAgICA9IHNvdXJjZSxcbiAgeSAgICAgPSBjdixcbiAgdGl0bGUgPSBcIkRpc3RyaWJ1dGlvbiBkZXMgY291dmVydHVyZXMgdmFjY2luYWxlcyBhZG1pbmlzdHJhdGl2ZXMgZXQgZGUgSUhNRSAyMDIzXCJcbikrIGxhYnMoXG4gIFxuICB4ID0gXCJcIiwgeSA9IFwiQ291dmVydHVyZSBWYWNjaW5hbGVcIlxuKVxuICAiLCJhdHRyIjp7Im91dC13aWR0aCI6IjUwJSIsImZpZy1zaG93IjoiaG9sZCIsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoiZmlnLWNvbXAifX0=
+</script>
+</div>
+</div>
+<p>On voit que les couvertures administratives sont en général plus élevées que les couvertures de l’ECV 2023 qui sont elles bornées à un maximum de 100% alors que les couvertures administratives atteignent 150%</p>
+<div class="cell">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJjb2RlIjoibGlicmFyeShnZ3JpZGdlcylcbnBvcCB8PiBwaXZvdF9sb25nZXIoY29scyA9IGMoY3ZfZHRjMV9hZG1pbiwgY3ZfZHRjMV9lY3YsIGN2X2R0YzFfaWhtZSksIG5hbWVzX3RvID0gXCJzb3VyY2VcIiwgdmFsdWVzX3RvID0gJ2N2JyklPiVcbiAgZ2dwbG90KGFlcyh5ID0gcHJvdmluY2UsIHggPSBjdikpK1xuICBnZW9tX2RlbnNpdHlfcmlkZ2VzMihhZXMoZmlsbCA9IHNvdXJjZSksIGFscGhhID0gMC42LCBsaW5ld2lkdGggPSAwLjMpK1xuICBzY2FsZV9maWxsX21hbnVhbChcIlNvdXJjZSBkZXMgZG9ubsOpZXNcIixsYWJlbHMgPSBjKFwiQWRtaW5cIiwgXCJFQ1ZcIiwgXCJJSE1FXCIpLCB2YWx1ZXMgPSBjKFwiY3lhbjRcIiwgXCJkYXJrb3JhbmdlXCIsIFwicHVycGxlXCIpKStcbiAgc2NhbGVfeF9jb250aW51b3VzKGxhYmVscyA9IHNjYWxlczo6bGFiZWxfcGVyY2VudCgpKVxuXG5cbiMgQWRtaW4gdnMgSUhNRSBcblxuXG5wb3AgfD4gcGl2b3RfbG9uZ2VyKGNvbHMgPSBjKGN2X2R0YzFfYWRtaW4sIGN2X2R0YzFfaWhtZSksIG5hbWVzX3RvID0gXCJzb3VyY2VcIiwgdmFsdWVzX3RvID0gJ2N2JyklPiVcbiAgZ2dwbG90KGFlcyh5ID0gcHJvdmluY2UsIHggPSBjdikpK1xuICBnZW9tX2RlbnNpdHlfcmlkZ2VzMihhZXMoZmlsbCA9IHNvdXJjZSksIGFscGhhID0gMC42LCBsaW5ld2lkdGggPSAwLjMpK1xuICBzY2FsZV9maWxsX21hbnVhbChcIlNvdXJjZSBkZXMgZG9ubsOpZXNcIixsYWJlbHMgPSBjKFwiQWRtaW5cIiwgXCJJSE1FXCIpLCB2YWx1ZXMgPSBjKFwiY3lhbjRcIiwgXCJkYXJrb3JhbmdlXCIpKStcbiAgc2NhbGVfeF9jb250aW51b3VzKGxhYmVscyA9IHNjYWxlczo6bGFiZWxfcGVyY2VudCgpKStcbiAgdGhlbWVfZ2dzdGF0c3Bsb3QoKVxuXG5cbiMgRUNWIFZzIElITUVcblxuIyBcbiMgcG9wIHw+IHBpdm90X2xvbmdlcihjb2xzID0gYyhjdl9kdGMxX2VjdiwgY3ZfZHRjMV9paG1lKSwgbmFtZXNfdG8gPSBcInNvdXJjZVwiLCB2YWx1ZXNfdG8gPSAnY3YnKSU+JVxuIyAgIGdncGxvdChhZXMoeSA9IHByb3ZpbmNlLCB4ID0gY3YpKStcbiMgICBnZW9tX2RlbnNpdHlfcmlkZ2VzMihhZXMoZmlsbCA9IHNvdXJjZSksIGFscGhhID0gMC42LCBsaW5ld2lkdGggPSAwLjMpK1xuIyAgIHNjYWxlX2ZpbGxfbWFudWFsKFwiU291cmNlIGRlcyBkb25uw6llc1wiLGxhYmVscyA9IGMoXCJFQ1ZcIiwgXCJJSE1FXCIpLCB2YWx1ZXMgPSBjKFwiY3lhbjRcIiwgXCJkYXJrb3JhbmdlXCIpKStcbiMgICBzY2FsZV94X2NvbnRpbnVvdXMobGFiZWxzID0gc2NhbGVzOjpsYWJlbF9wZXJjZW50KCkpK1xuIyAgIHRoZW1lX2dnc3RhdHNwbG90KCkiLCJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9fQ==
+</script>
+</div>
+</div>
+<p>Pour la majorité des province, les distributions de couvertures vaccinales en Administrative sont plus élevées que celle en administrative. Neanmoins pour les provinces comme Kinshasa, Kwilu, Congo central, etc. de l’ECV sont bien plus élevés.</p>
+<p>On peut investiger la distribution des differents taux de variation. On va dabord enlever toutes les valeurs aberrantes afin de mieux visualiser la distribution des taux de variation.</p>
+<div class="cell">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJjb2RlIjoiZWNhcnQgPC0gMS41ICogSVFSKHBvcCR2YXJpYXRpb25fZWN2X2R0YzEsIG5hLnJtID0gVClcbm1uIDwtIHF1YW50aWxlKHBvcCR2YXJpYXRpb25fZWN2X2R0YzEsIDEvNCwgbmEucm0gPSBUKSAtIGVjYXJ0XG5teCA8LSBxdWFudGlsZShwb3AkdmFyaWF0aW9uX2Vjdl9kdGMxLCAzLzQsIG5hLnJtID0gVCkgKyBlY2FydFxucG9wIHw+IGZpbHRlcihiZXR3ZWVuKHZhcmlhdGlvbl9lY3ZfZHRjMSwgbW4sIG14KSl8PlxuICBnZ3Bsb3QoYWVzKHpvbmVfc2FudGUsIHkgPSB2YXJpYXRpb25fZWN2X2R0YzEpKStcbiAgZ2VvbV9yZWN0KHhtaW4gPSAtSW5mLCB4bWF4ID0gSW5mLCB5bWluID0gLTAuMSwgeW1heCA9IDAuMSwgZmlsbCA9IFwic2t5Ymx1ZVwiLCBhbHBoYSA9IDAuMywgaW5oZXJpdC5hZXMgPSBGLCBjb2xvciA9IE5BKStcbiAgZ2VvbV9wb2ludCggc2l6ZSA9IDMgKStcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gYygtMC4xLCAwLjEpLCBsaW5ldHlwZSA9IDIsIGNvbG9yID0gXCJncmV5NzBcIiwgbGluZXdpZHRoID0gMC44KStcbiAgZmFjZXRfd3JhcCh2YXJzKHByb3ZpbmNlKSwgbnJvdyA9IDMsIHNjYWxlcyA9IFwiZnJlZV94XCIpK1xuICBzY2FsZV95X2NvbnRpbnVvdXMoXCJUYXV4IGRlIHZhcmlhdGlvbiBhdSBEVEMxIChFQ1YpXCIsIGxhYmVscyA9IHNjYWxlczo6bGFiZWxfcGVyY2VudCgpKStcbiAgdGhlbWUoXG4gICAgYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoYW5nbGUgPSA5MCwgc2l6ZSA9IDUpLFxuICAgIGF4aXMudGlja3MueSA9IGVsZW1lbnRfYmxhbmsoKVxuICApIiwiYXR0ciI6eyJvdXQtd2lkdGgiOiIxMDAlIiwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>La bande bleue spécifie l’intervalle -10% à 10%.</p>
+<p>On peut observer que le taux de varie enormement selon la province. Les provinces de l’Ituri, Kinshasa, ou du Congo central sont assez homogènes alors que celles de Tshopo ou encore Tshuapa sont très variables.</p>
+<div class="cell">
+<div>
+<div id="webr-5" class="exercise-cell">
+
+</div>
+<script type="webr-5-contents">
+eyJjb2RlIjoiZWNhcnQgPC0gMS41ICogSVFSKHBvcCR2YXJpYXRpb25faWhtZV9kdGMxLCBuYS5ybSA9IFQpXG5tbiA8LSBxdWFudGlsZShwb3AkdmFyaWF0aW9uX2lobWVfZHRjMSwgMS80LCBuYS5ybSA9IFQpIC0gZWNhcnRcbm14IDwtIHF1YW50aWxlKHBvcCR2YXJpYXRpb25faWhtZV9kdGMxLCAzLzQsIG5hLnJtID0gVCkgKyBlY2FydFxuXG5wb3AgfD4gZmlsdGVyKGJldHdlZW4odmFyaWF0aW9uX2lobWVfZHRjMSwgbW4sIG14KSl8PlxuICBnZ3Bsb3QoYWVzKHpvbmVfc2FudGUsIHkgPSB2YXJpYXRpb25faWhtZV9kdGMxKSkrXG4gIGdlb21fcmVjdCh4bWluID0gLUluZiwgeG1heCA9IEluZiwgeW1pbiA9IC0wLjEsIHltYXggPSAwLjEsIGZpbGwgPSBcInNreWJsdWVcIiwgYWxwaGEgPSAwLjMsIGluaGVyaXQuYWVzID0gRiwgY29sb3IgPSBOQSkrXG4gIGdlb21fcG9pbnQoIHNpemUgPSAzICkrXG4gIGdlb21faGxpbmUoeWludGVyY2VwdCA9IGMoLTAuMSwgMC4xKSwgbGluZXR5cGUgPSAyLCBjb2xvciA9IFwiZ3JleTcwXCIsIGxpbmV3aWR0aCA9IDAuOCkrXG4gIGZhY2V0X3dyYXAodmFycyhwcm92aW5jZSksIG5yb3cgPSAzLCBzY2FsZXMgPSBcImZyZWVfeFwiKStcbiAgc2NhbGVfeV9jb250aW51b3VzKFwiVGF1eCBkZSB2YXJpYXRpb24gYXUgRFRDMSAoSUhNRSlcIiwgbGFiZWxzID0gc2NhbGVzOjpsYWJlbF9wZXJjZW50KCkpK1xuICB0aGVtZShcbiAgICBheGlzLnRleHQueCA9IGVsZW1lbnRfdGV4dChhbmdsZSA9IDkwLCBzaXplID0gNSksXG4gICAgYXhpcy50aWNrcy55ID0gZWxlbWVudF9ibGFuaygpXG4gICkiLCJhdHRyIjp7Im91dC13aWR0aCI6IjEwMCUiLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Lorsque qu on investigue la distribution des taux de variation estimeés à partir des données de l’IHME, on constate que plusieurs provinces n’ont pas de zones des santé dans l’intervalle -10%-10%. Par ailleurs, on voit que la majorité des zones de santé ont des populations cibles sousestimeées.</p>
+<p>On dès lors investiguer les différents scénario cités plus haut.</p>
+<ul>
+<li><strong>Scenario 1: Les taux de variation avec l’ECV et IHME sont tous les deux compris entre -10 et 10%</strong></li>
+</ul>
+<div class="cell">
+<div>
+<div id="webr-6" class="exercise-cell">
+
+</div>
+<script type="webr-6-contents">
+eyJjb2RlIjoibGlicmFyeShndClcbnNjZW5hcjEgPC0gcG9wIHw+IGZpbHRlcihiZXR3ZWVuKHZhcmlhdGlvbl9lY3ZfZHRjMSwgLTAuMSwgMC4xKSwgYmV0d2Vlbih2YXJpYXRpb25faWhtZV9kdGMxLCAtMC4xLCAwLjEpICl8PlxuICBtdXRhdGUocG9wX2FkaiA9IHN1cnZpdmFudHNfYWRtaW4pXG5cbiMgTm9tYnJlIGRlIHpvbmVzIGRlIHNhbnTDqSBcbm5yb3coc2NlbmFyMSlcblxuIyBOb21icmUgZGUgem9uZXMgZGUgc2FudMOpIHBhciBwcm92aW5jZSBcblxuc2NlbmFyMSB8PiBzdW1tYXJpc2UoenMgPSBuKCksIC5ieSA9IHByb3ZpbmNlKVxuXG4jIGxpc3RlIGRlcyB6ZCBcblxuc2NlbmFyMSB8PiBzZWxlY3QocHJvdmluY2UsIHpvbmVfc2FudGUsIHN1cnZpdmFudHNfYWRtaW4sIHN1cnZpdmFudHNfZWN2LCBzdXJ2aXZhbnRzX2lobWUsIHBvcF9hZGopfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICBmbXRfaW50ZWdlcigpXG4gICIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>Dans le scenario 1, 62 zones de santé ont des taux de variation entre -10% et 10%. Lorsqu’on examine les populations estimée et les population administrative, on voit qu’elles sont très proches, l’ajustement des population serait donc superflu dans ce cas.</p>
+<p><strong>Scenario 2: Le taux de variation de l’ECV est compris entre -10 et 10% alors que celui de l’IHME ne l’est pas</strong></p>
+<div class="cell">
+<div>
+<div id="webr-7" class="exercise-cell">
+
+</div>
+<script type="webr-7-contents">
+eyJjb2RlIjoiXG5zY2VuYXIyIDwtIHBvcCB8PiBmaWx0ZXIoYmV0d2Vlbih2YXJpYXRpb25fZWN2X2R0YzEsIC0wLjEsIDAuMSksICFiZXR3ZWVuKHZhcmlhdGlvbl9paG1lX2R0YzEsIC0wLjEsIDAuMSksICF6b25lX3NhbnRlICVpbiUgc2NlbmFyMSR6b25lX3NhbnRlICkgfD5cbiAgbXV0YXRlKHBvcF9hZGogPSBzdXJ2aXZhbnRzX2FkbWluKVxuXG4jIE5vbWJyZSBkZSB6b25lcyBkZSBzYW50w6kgXG5ucm93KHNjZW5hcjIpXG5cbiMgTm9tYnJlIGRlIHpvbmVzIGRlIHNhbnTDqSBwYXIgcHJvdmluY2UgXG5cbnNjZW5hcjIgfD4gc3VtbWFyaXNlKHpzID0gbigpLCAuYnkgPSBwcm92aW5jZSlcblxuIyBsaXN0ZSBkZXMgemQgXG5cbnNjZW5hcjIgfD4gc2VsZWN0KHByb3ZpbmNlLHpvbmVfc2FudGUsIHN1cnZpdmFudHNfYWRtaW4sIHN1cnZpdmFudHNfZWN2LCBzdXJ2aXZhbnRzX2lobWUsIHBvcF9hZGopfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICBmbXRfaW50ZWdlcigpXG4gICIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>Dans ce scenario 96 zones de santé ont été identifiées. Comme discuté plus haut l’ECV est considéré comme la reférence alors on n’effectue pas d’ajustement.</p>
+<p><strong>Scenario 3: Les deux taux de variation sont inférieurs à -10%</strong></p>
+<div class="cell">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJjb2RlIjoiXG5zY2VuYXIzIDwtIHBvcCB8PiBmaWx0ZXIodmFyaWF0aW9uX2Vjdl9kdGMxIDwgLTAuMSwgdmFyaWF0aW9uX2lobWVfZHRjMSA8IC0wLjEpXG5cbiMgTm9tYnJlIGRlIHpvbmVzIGRlIHNhbnTDqSBcbm5yb3coc2NlbmFyMylcblxuIyBOb21icmUgZGUgem9uZXMgZGUgc2FudMOpIHBhciBwcm92aW5jZSBcblxuc2NlbmFyMyB8PiBzdW1tYXJpc2UoenMgPSBuKCksIC5ieSA9IHByb3ZpbmNlKVxuXG4jIEFqdXN0ZW1lbnQgZGUgbGEgcG9wdWxhdGlvbiBcblxuc2NlbmFyMyA8LSBzY2VuYXIzIHw+IG11dGF0ZShcbiAgcG9wX2FkaiA9IGlmZWxzZShhYnModmFyaWF0aW9uX2Vjdl9kdGMxKSA8PSAwLjIsIHN1cnZpdmFudHNfYWRtaW4gKyBhYnModmFyaWF0aW9uX2Vjdl9kdGMxKSpzdXJ2aXZhbnRzX2FkbWluLFxuICAgICAgICAgICAgICAgICAgIHN1cnZpdmFudHNfYWRtaW4gKyAwLjIqc3Vydml2YW50c19hZG1pbilcbilcblxuIyBsaXN0ZSBkZXMgemQgXG5cbnNjZW5hcjMgfD4gc2VsZWN0KHByb3ZpbmNlLHpvbmVfc2FudGUsIHN1cnZpdmFudHNfYWRtaW4sIHN1cnZpdmFudHNfZWN2LCBzdXJ2aXZhbnRzX2lobWUsIHBvcF9hZGopfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICBmbXRfaW50ZWdlcigpXG4gICIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>217 districts sont concernés par le scénario 3, nous avons donc procédé a un ajustement des population en augmentant les populations cibles.</p>
+<p><strong>Scenario 4: Les deux taux de variation sont supérieur à 10%</strong></p>
+<p>Pour ce scenario la population a été revue à la baisse en tenant compte des restrictions de ne pas reduire de plus de 20% et que la population ajustée ne soit pas inférieure au nombre de vaccinés.</p>
+<div class="cell">
+<div>
+<div id="webr-9" class="exercise-cell">
+
+</div>
+<script type="webr-9-contents">
+eyJjb2RlIjoiXG5zY2VuYXI0IDwtIHBvcCB8PiBmaWx0ZXIodmFyaWF0aW9uX2Vjdl9kdGMxID4gMC4xLCB2YXJpYXRpb25faWhtZV9kdGMxID4gMC4xKVxuXG4jIE5vbWJyZSBkZSB6b25lcyBkZSBzYW50w6kgXG5ucm93KHNjZW5hcjQpXG5cbiMgTm9tYnJlIGRlIHpvbmVzIGRlIHNhbnTDqSBwYXIgcHJvdmluY2UgXG5cbnNjZW5hcjQgfD4gc3VtbWFyaXNlKHpzID0gbigpLCAuYnkgPSBwcm92aW5jZSlcblxuIyBBanVzdGVtZW50IGRlIGxhIHBvcHVsYXRpb24gXG5cbnNjZW5hcjQgPC0gc2NlbmFyNCB8PiBtdXRhdGUoXG4gIHBvcF9hZGogPSBpZmVsc2UodmFyaWF0aW9uX2Vjdl9kdGMxIDwgMC4yLCBzdXJ2aXZhbnRzX2FkbWluIC0gYWJzKHZhcmlhdGlvbl9lY3ZfZHRjMSkqc3Vydml2YW50c19hZG1pbixcbiAgICAgICAgICAgICAgICAgICBzdXJ2aXZhbnRzX2FkbWluIC0gMC4yKnN1cnZpdmFudHNfYWRtaW4pXG4pfD4gbXV0YXRlKHBvcF9hZGogPSBpZmVsc2UocG9wX2Fkajw9IGR0YzFfdmFjY2luYXRlZCwgZHRjMV92YWNjaW5hdGVkLCBwb3BfYWRqKSlcblxuIyBsaXN0ZSBkZXMgemQgXG5cbnNjZW5hcjQgfD4gc2VsZWN0KHByb3ZpbmNlLHpvbmVfc2FudGUsIHN1cnZpdmFudHNfYWRtaW4sIHN1cnZpdmFudHNfZWN2LCBzdXJ2aXZhbnRzX2lobWUsIHBvcF9hZGopfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICBmbXRfaW50ZWdlcigpXG4gICIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p><strong>Scenario 5: Cas non pris en charge dans les précédents scénari</strong></p>
+<div class="cell">
+<div>
+<div id="webr-10" class="exercise-cell">
+
+</div>
+<script type="webr-10-contents">
+eyJjb2RlIjoiXG5zY2VuYXI1IDwtIHBvcCB8PiBmaWx0ZXIoIXpvbmVfc2FudGUgJWluJSBjKHNjZW5hcjEkem9uZV9zYW50ZSwgc2NlbmFyMiR6b25lX3NhbnRlLCBzY2VuYXIzJHpvbmVfc2FudGUsIHNjZW5hcjQkem9uZV9zYW50ZSkpXG5cbiMgTm9tYnJlIGRlIHpvbmVzIGRlIHNhbnTDqSBcbm5yb3coc2NlbmFyNSlcblxuIyBOb21icmUgZGUgem9uZXMgZGUgc2FudMOpIHBhciBwcm92aW5jZSBcblxuc2NlbmFyNSB8PiBzdW1tYXJpc2UoenMgPSBuKCksIC5ieSA9IHByb3ZpbmNlKVxuXG4jIEFqdXN0ZW1lbnQgZGUgbGEgcG9wdWxhdGlvbiBcblxuc2NlbmFyNSA8LSBzY2VuYXI1IHw+IG11dGF0ZShcbiAgcG9wX2FkaiA9IGNhc2Vfd2hlbihcbiAgICBcbiAgICBiZXR3ZWVuKHZhcmlhdGlvbl9lY3ZfZHRjMSwgLTAuMSwgLTAuMikgfiBzdXJ2aXZhbnRzX2FkbWluICsgYWJzKHZhcmlhdGlvbl9lY3ZfZHRjMSkgKiBzdXJ2aXZhbnRzX2FkbWluLFxuICAgIFxuICAgIHZhcmlhdGlvbl9lY3ZfZHRjMSA8IC0wLjIgfiBzdXJ2aXZhbnRzX2FkbWluICsgMC4yICogc3Vydml2YW50c19hZG1pbixcbiAgICBcbiAgICBiZXR3ZWVuKHZhcmlhdGlvbl9lY3ZfZHRjMSwgMC4xLCAwLjIpIH4gc3Vydml2YW50c19hZG1pbiAtIGFicyh2YXJpYXRpb25fZWN2X2R0YzEpICogc3Vydml2YW50c19hZG1pbixcbiAgICBcbiAgICAgdmFyaWF0aW9uX2Vjdl9kdGMxID4gIDAuMiB+IHN1cnZpdmFudHNfYWRtaW4gLSAwLjIgKiBzdXJ2aXZhbnRzX2FkbWluLCBcbiAgICAuZGVmYXVsdCA9IHN1cnZpdmFudHNfYWRtaW4gKyBhYnModmFyaWF0aW9uX2Vjdl9kdGMxKSAqIHN1cnZpdmFudHNfYWRtaW4gICMgTGVzIG9yZGluYXRldXJzIG4nYXJyaXZlbnQgcGFzIGVuY29yZSDDoCBjb21wYXJlciBkZSB0csOocyBwZXRpdGVzIHZhbGV1cnMsIGNlcyB2YWxldXJzIG9udCDDqXTDqSBhanVzdMOpZXMgYXByZXMgaW5zcGVjdGlvbiBcbiAgKVxuKXw+IG11dGF0ZShwb3BfYWRqID0gaWZlbHNlKHBvcF9hZGogPD0gZHRjMV92YWNjaW5hdGVkLCBkdGMxX3ZhY2NpbmF0ZWQsIHBvcF9hZGopKVxuXG4jIGxpc3RlIGRlcyB6ZCBcblxuc2NlbmFyNSB8PiBzZWxlY3QocHJvdmluY2UsIHpvbmVfc2FudGUsc3Vydml2YW50c19hZG1pbiwgc3Vydml2YW50c19lY3YsIHN1cnZpdmFudHNfaWhtZSwgIHBvcF9hZGopfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICBmbXRfaW50ZWdlcigpXG4gICIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>On peut donc déja consolider les différentes population après ajustement</p>
+<div class="cell">
+<div>
+<div id="webr-11" class="exercise-cell">
+
+</div>
+<script type="webr-11-contents">
+eyJjb2RlIjoiZGZfcG9wIDwtIGJpbmRfcm93cyhsaXN0KHNjZW5hcjEsIHNjZW5hcjIsIHNjZW5hcjMsIHNjZW5hcjQsIHNjZW5hcjUpKVxuXG5kZl9wb3AgfD4gc2VsZWN0KHByb3ZpbmNlLCB6b25lX3NhbnRlLCBzdXJ2aXZhbnRzX2FkbWluLCBwb3BfYWRqKXw+XG4gIGd0KGdyb3VwbmFtZV9jb2wgPSBcInByb3ZpbmNlXCIpfD5cbiAgY29sc19sYWJlbChcbiAgICBcbiAgICBzdXJ2aXZhbnRzX2FkbWluID0gXCJBbmNpZW5uZSBQb3B1bGF0aW9uXCIsXG4gICAgcG9wX2FkaiA9IFwiTm91dmVsbGUgUG9wdWxhdGlvblwiXG4gICAgXG4gICkgfD4gZm10X2ludGVnZXIoKXw+XG4gIGd0RXh0cmFzOjpndF90aGVtZV9ndWFyZGlhbigpIiwiYXR0ciI6eyJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>On va aussi ajuster les naissances vivantes en utilisant uniquement les couvertures vaccinales de l’ECV 2023, tout en appliquant les scénari définis plus haut.</p>
+<div class="cell">
+<div>
+<div id="webr-12" class="exercise-cell">
+
+</div>
+<script type="webr-12-contents">
+eyJjb2RlIjoiZGZfcG9wIDwtIGRmX3BvcCB8PiBcbiAgbXV0YXRlKFxuICBiY2dfYWRqID0gY2FzZV93aGVuKFxuICAgIFxuICAgIGJldHdlZW4odmFyaWF0aW9uX2JjZywgLTAuMSwgMC4xKSB+IG5haXNzX2RoaXMyLFxuICAgIFxuICAgIHZhcmlhdGlvbl9iY2cgPCAtMC4xICYgIHZhcmlhdGlvbl9iY2cgPiAtMC4yIH4gbmFpc3NfZGhpczIgKyBhYnModmFyaWF0aW9uX2JjZykgKiBuYWlzc19kaGlzMixcbiAgICBcbiAgICB2YXJpYXRpb25fYmNnIDw9IC0wLjIgfiBuYWlzc19kaGlzMiArIDAuMiAqIG5haXNzX2RoaXMyLFxuICAgIFxuICAgIHZhcmlhdGlvbl9iY2cgPiAwLjEgJiAgdmFyaWF0aW9uX2JjZyA8IDAuMiB+IG5haXNzX2RoaXMyIC0gYWJzKHZhcmlhdGlvbl9iY2cpICogbmFpc3NfZGhpczIsXG4gICAgXG4gICAgIHZhcmlhdGlvbl9iY2cgPiAgMC4yIH4gbmFpc3NfZGhpczIgLSAwLjIgKiBuYWlzc19kaGlzMiwgXG4gICAgLmRlZmF1bHQgPSBuYWlzc19kaGlzMiArIGFicyh2YXJpYXRpb25fYmNnKSAqIG5haXNzX2RoaXMyICAjIExlcyBvcmRpbmF0ZXVycyBuJ2Fycml2ZW50IHBhcyBlbmNvcmUgw6AgY29tcGFyZXIgZGUgdHLDqHMgcGV0aXRlcyB2YWxldXJzLCBjZXMgdmFsZXVycyBvbnQgw6l0w6kgYWp1c3TDqWVzIGFwcmVzIGluc3BlY3Rpb24gXG4gIClcbil8PiAgbXV0YXRlKGJjZ19hZGogPSBpZmVsc2UoYmNnX2FkaiA8PSBiY2csIGJjZywgYmNnX2FkaikpXG5cbiAgXG4gIGRmX3BvcCB8PiBzZWxlY3QocHJvdmluY2UsIHpvbmVfc2FudGUsIG5haXNzX2RoaXMyLCBiY2dfYWRqKXw+XG4gIGd0KGdyb3VwbmFtZV9jb2wgPSBcInByb3ZpbmNlXCIpfD5cbiAgY29sc19sYWJlbChcbiAgICBcbiAgICBuYWlzc19kaGlzMiA9IFwiQW5jaWVubmUgTmFpc3NhbmNlc1wiLFxuICAgIGJjZ19hZGogPSBcIk5vdXZlbGxlIE5haXNzYW5jZXNcIlxuICAgIFxuICApIHw+IGZtdF9pbnRlZ2VyKCl8PlxuICBndEV4dHJhczo6Z3RfdGhlbWVfZ3VhcmRpYW4oKVxuICBcbiAgIiwiYXR0ciI6eyJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Pour terminer le processus d’estimation il est important de verifier que les survivants ajustés sont inférieurs aux naissances vivantes.</p>
+<div class="cell">
+<div>
+<div id="webr-13" class="exercise-cell">
+
+</div>
+<script type="webr-13-contents">
+eyJjb2RlIjoiXG5kZl9wb3AgfD4gZmlsdGVyKGJjZ19hZGogPCBwb3BfYWRqKSB8PiBucm93KClcblxuZGZfcG9wIHw+IGZpbHRlcihiY2dfYWRqIDwgcG9wX2Fkail8PiBzZWxlY3QocHJvdmluY2Usem9uZV9zYW50ZSwgcG9wX2FkaiwgYmNnX2Fkail8PlxuICBndChncm91cG5hbWVfY29sID0gXCJwcm92aW5jZVwiKSIsImF0dHIiOnsiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>On constate qu il y a <code>298</code> districts qui ont un nombre de survivants ajustés plus élevé que les naissances vivantes ajustés, et la mortalité implicite est négative. De ce fait il judicieux d’estimer les naissances vivantes en utilisant la mortalité infantile de l’EDS qui sera appliquée aux survivants afin d’estimer les naissances vivantes.</p>
+<p><span class="math display">\[ \text{Naissances Vivantes} = \text{Survivants Ajustés} + \text{Taux de mortalité} * \text{Survivants Ajustés}\]</span></p>
+<p>Selon l’EDS le taux de mortalité infantile en RDC est de 55/1000 naissances vivantes.</p>
+<div class="cell">
+<div>
+<div id="webr-14" class="exercise-cell">
+
+</div>
+<script type="webr-14-contents">
+eyJjb2RlIjoiIyBFc3RpbWF0aW9uIGRlcyBzdXJ2aXZhbnRzIGFqdXN0w6lzIHNlbG9uIGwnRURTXG5cbmRmX3BvcCRiY2dfZWRzIDwtICBkZl9wb3AkcG9wX2FkaiArICg1NS8xMDAwKSAqIGRmX3BvcCRwb3BfYWRqIFxuXG5cbiAgZGZfcG9wIHw+IHNlbGVjdChwcm92aW5jZSwgem9uZV9zYW50ZSwgYmNnX2VkcywgcG9wX2Fkail8PlxuICBndChncm91cG5hbWVfY29sID0gXCJwcm92aW5jZVwiKXw+XG4gIGNvbHNfbGFiZWwoXG4gICAgXG4gICAgYmNnX2VkcyA9IFwiTmFpc3NhbmNlcyBBanVzdMOpZXMgw6AgbCdFRFNcIixcbiAgICBwb3BfYWRqID0gXCJTdXJ2aXZhbnRzIEFqdXN0w6lzXCJcbiAgICBcbiAgKSB8PiBmbXRfaW50ZWdlcigpfD5cbiAgZ3RFeHRyYXM6Omd0X3RoZW1lX2d1YXJkaWFuKCkiLCJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9fQ==
+</script>
+</div>
+</div>
+<p>On a donc nos populations ajustées de 2023, on pourrait maintenant estimer les population cibles de 2024 et 2025.</p>
+</section>
+</section>
+<section id="estimation-des-population-cibles-2024-et-2025" class="level2">
+<h2 class="anchored" data-anchor-id="estimation-des-population-cibles-2024-et-2025">Estimation des population cibles 2024 et 2025</h2>
+<p>Pour estimer les populations cibles de 2024 et 2025 on va appliquer le taux d’accroissement annuel de 3% aux populations ajustées estimées.</p>
+<div class="cell">
+<div>
+<div id="webr-15" class="exercise-cell">
+
+</div>
+<script type="webr-15-contents">
+eyJjb2RlIjoiXG52YXIgPC0gYyhcImJjZ19lZHNcIiwgXCJwb3BfYWRqXCIpXG5kZl9wb3AgPC0gZGZfcG9wIHw+IG11dGF0ZShcbiAgYWNyb3NzKGMoYmNnX2VkcywgcG9wX2FkaiksIH4ueCoxLjAzLCAubmFtZXMgPSBcInt2YXJ9XzIwMjRcIilcbil8PlxuICBtdXRhdGUoYWNyb3NzKGVuZHNfd2l0aChcIjIwMjRcIiksIH4ueCAqIDEuMDMsIC5uYW1lcyA9IFwie3Zhcn1fMjAyNVwiKSlcblxuICBkZl9wb3AgfD4gc2VsZWN0KHByb3ZpbmNlLCB6b25lX3NhbnRlLCBiY2dfZWRzLCBwb3BfYWRqLCBwb3BfYWRqXzIwMjQsIGJjZ19lZHNfMjAyNCwgcG9wX2Fkal8yMDI1LCBiY2dfZWRzXzIwMjUpfD5cbiAgZ3QoZ3JvdXBuYW1lX2NvbCA9IFwicHJvdmluY2VcIil8PlxuICAgZm10X2ludGVnZXIoKXw+XG4gIGd0RXh0cmFzOjpndF90aGVtZV9ndWFyZGlhbigpIiwiYXR0ciI6eyJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>On a donc completer notre tache d’estimation des population pour la vaccination de routine.</p>
+
+
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjEvIn0sInBhY2thZ2VzIjp7InJlcG9zIjpbXSwicGtncyI6WyJldmFsdWF0ZSIsImtuaXRyIiwiaHRtbHRvb2xzIiwiaGVyZSIsInRpZHl2ZXJzZSIsInNmIiwiamFuaXRvciIsInJlYWR4bCIsImd0IiwiZ2dzdGF0c3Bsb3QiLCJnZ3JpZGdlcyIsImd0RXh0cmFzIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTU7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xNSIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTUgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTE1LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzE1ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xNSwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xNCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTQgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xNC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTE0LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzE0ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xNCwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMyIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xMyIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xMy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTEzLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzEzID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xMywge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xMiIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTIgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTEyLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzEyID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xMiwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xMSIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTEgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTExLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzExID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xMSwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTA7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xMCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMTAgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xMC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTEwLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzEwID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xMCwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0In0seyJjZWxsTmFtZSI6IndlYnItOSIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfOSA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTktY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici05LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzkgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzksIHt9KTtcbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtOCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfODtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTgiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzggPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici04LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV84ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl84LCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0In0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTciLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici03Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl83ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTctY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNywge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0In0seyJjZWxsTmFtZSI6IndlYnItNiIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTYtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici02LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzYgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzYsIHt9KTtcbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTUiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzUgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV81ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl81LCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0In0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici00Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNCwge30pO1xuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0In0seyJjZWxsTmFtZSI6IndlYnItMyIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0zLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzIgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8yID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yLCB7fSk7XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0In0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifSx7ImNlbGxOYW1lIjoid2Vici0xIiwic291cmNlIjoiX3dlYnJfdmFsdWVfMSA9IHtcbiAgY29uc3QgeyBoaWdobGlnaHRSLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBldmFsdWF0aW9uIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oe1xuICAgIGlkOiBcIndlYnItMS1jb250ZW50c1wiLFxuICAgIGVjaG86IHRydWUsXG4gICAgb3V0cHV0OiB0cnVlXG4gIH0sIGJsb2NrLmF0dHIpO1xuXG4gIC8vIEV2YWx1YXRlIHRoZSBwcm92aWRlZCBSIGNvZGVcbiAgY29uc3QgcmVzdWx0ID0gd2ViUk9qcy5wcm9jZXNzKHtjb2RlOiBibG9jay5jb2RlLCBvcHRpb25zfSwge30pO1xuXG4gIC8vIEVhcmx5IHlpZWxkIHdoaWxlIHdlIHdhaXQgZm9yIHRoZSBmaXJzdCBldmFsdWF0aW9uIGFuZCByZW5kZXJcbiAgaWYgKG9wdGlvbnMub3V0cHV0ICYmICEoXCIxXCIgaW4gd2ViUk9qcy5yZW5kZXJlZE9qcykpIHtcbiAgICBjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpO1xuICAgIGNvbnN0IHNwaW5uZXIgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpO1xuXG4gICAgaWYgKG9wdGlvbnMuZWNobykge1xuICAgICAgLy8gU2hvdyBvdXRwdXQgYXMgaGlnaGxpZ2h0ZWQgc291cmNlXG4gICAgICBjb25zdCBwcmVFbGVtID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcInByZVwiKTtcbiAgICAgIGNvbnRhaW5lci5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGVcIjtcbiAgICAgIHByZUVsZW0uY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlIHJcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoaGlnaGxpZ2h0UihibG9jay5jb2RlKSk7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ncm93IHNwaW5uZXItZ3Jvdy1zbSBtLTIgcG9zaXRpb24tYWJzb2x1dGUgdG9wLTAgZW5kLTBcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQocHJlRWxlbSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWJvcmRlciBzcGlubmVyLWJvcmRlci1zbVwiO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgIH1cblxuICAgIHlpZWxkIGNvbnRhaW5lcjtcbiAgfVxuXG4gIHdlYlJPanMucmVuZGVyZWRPanNbXCIxXCJdID0gdHJ1ZTtcbiAgeWllbGQgYXdhaXQgcmVzdWx0O1xufVxuIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gd2ViUiBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICAvLyBJbml0aWFsaXNlIHdlYlIgYW5kIHNldHVwIGZvciBSIGNvZGUgZXZhbHVhdGlvblxuICBsZXQgd2ViUlByb21pc2UgPSAoYXN5bmMgKHdlYlIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHdlYlJgO1xuICAgIGF3YWl0IHdlYlIuaW5pdCgpO1xuXG4gICAgLy8gSW5zdGFsbCBwcm92aWRlZCBsaXN0IG9mIHBhY2thZ2VzXG4gICAgLy8gRW5zdXJlIHdlYlIgZGVmYXVsdCByZXBvIGlzIGluY2x1ZGVkXG4gICAgZGF0YS5wYWNrYWdlcy5yZXBvcy5wdXNoKFwiaHR0cHM6Ly9yZXBvLnItd2FzbS5vcmdcIilcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiB3ZWJSLmV2YWxSVm9pZChgXG4gICAgICAgIHdlYnI6Omluc3RhbGwocGtnLCByZXBvcyA9IHJlcG9zKVxuICAgICAgICBsaWJyYXJ5KHBrZywgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKVxuICAgICAgYCwgeyBlbnY6IHtcbiAgICAgICAgcGtnOiBwa2csXG4gICAgICAgIHJlcG9zOiBkYXRhLnBhY2thZ2VzLnJlcG9zLFxuICAgICAgfX0pO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgd2ViUi5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmICghZS5tZXNzYWdlLmluY2x1ZGVzKFwiRlMgZXJyb3JcIikpIHtcbiAgICAgICAgICAgIHRocm93IGU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICByZXR1cm4gYXdhaXQgd2ViUi5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbnN0YWxsaW5nIHdlYlIgc2hpbXNgO1xuICAgIGF3YWl0IHdlYlIuZXZhbFJWb2lkKGB3ZWJyOjpzaGltX2luc3RhbGwoKWApO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBXZWJSIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFIod2ViUiwgZGF0YSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gd2ViUjtcbiAgfSkobmV3IFdlYlIoZGF0YS5vcHRpb25zKSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHdlYlIgPSBhd2FpdCB3ZWJSUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgV2ViUkV2YWx1YXRvcih3ZWJSLCBjb250ZXh0KVxuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHByb2Nlc3MsXG4gICAgd2ViUlByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gIH07XG59XG4iLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQifV19
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-label="copyright"></i> WHO-IST CA 2024<br> Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.afro.who.int/">
+<p><img src="img/static/logo-en.svg" alt="WHO-AFRO" width="250" height="62.5">&nbsp;</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -4,23 +4,21 @@ project:
 
 
 website:
-  title: Atelier de triangulation des données de population de différentes sources en vue de l’ajustement des cibles et de détermination d’une méthode de suivi des couvertures vaccinales en routine
+  #title: Bulettin Mensuel de la Vaccination
   favicon: /static/img/who-emblem.png
-  site-url: https://who-ist-ca.github.io/atelier_triangulation/
+  #site-url: https://benguimbis.github.io/registration_website/
   cookie-consent: true
-
-
+  #repo-url: https://github.com/benguimbis/registration_website
+  repo-actions: [source, issue]
 
   navbar:
     logo: /static/img/logo-en.svg
     background: light
     foreground: dark
     right:
-      - text: "Accueil"
+      - text: Tutoriel
         href: index.qmd
         icon: bi-house-door-fill
-      - text: Enregistrements
-        icon: input-cursor-text
 
 
 
@@ -29,12 +27,9 @@ website:
       {{< fa regular copyright >}} WHO-IST CA 2024<br>
       Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org)
     right:
-      - text: <img src = "static/img/logo-en.svg"  alt = "WHO-AFRO" width = "250" height = "62.5">&nbsp;
+      - text: <img src = "img/static/logo-en.svg"  alt = "WHO-AFRO" width = "250" height = "62.5">&nbsp;
         href: https://www.afro.who.int/
         aria-label: WHO-AFRO
-      - text: <img src = "static/img/unicef2.png" alt = "Unicef" width = "150" height = "37.5" img>
-        href: https://www.unicef.org/wca/
-        aria-label: Unicef-WCA
 
 
 
@@ -49,19 +44,46 @@ format:
     code-block-border-left: "#78c2ad"
     code-fold: true
     code-tools: false
-    fig-width: 9
-    fig-height: 6
+    fig-width: 12
+    fig-height: 10
+    fig-dpi: 700
+    fig-format: svg
+    lang: fr
     fig-align: center
+    keep-md: true
+
     other-links:
-      - text: "Telecharger Agenda"
+      - text: "Sources des données"
         icon: download
-        href: meeting.ics
+        href: download/consolidated_pop_and_vaccination_data.xlsx
+      - text: "Feuille de calcul pour l'ajustement"
+        icon: download
+        href: download/Tableau_ajustement_Cibles_PEV_workshop.xlsx
+      - text: 'Population Ajustée RDC'
+        href: download/pop_ajusted_rdc.csv
+        icon: download
 
 execute:
   freeze: auto
+  echo: false
+  warning: false
+  error: false
 
-lang: fr
+
+knitr:
+  opts_chunk:
+    fig.path: figures/
+
+crossref:
+  chapters: true
+  tbl-title: Tableau
 
 language:
+  en:
+    crossref-fig-title: "figure"
+    crossref-tbl-title: "table"
   fr:
-    title-block-published: "Mis à jour"
+    crossref-fig-title: "figure"
+    crossref-tbl-title: "tableau"
+
+lightbox: true

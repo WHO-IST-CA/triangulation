@@ -1,7 +1,8 @@
 ---
-title: "tutoriel"
+title: "Tutoriel sur l'ajustement des populations cibles de la vaccination de routine en Rèpublique Démocratique du Congo"
 format: live-html
 engine: knitr
+date-modified: last-modified
 webr:
   packages:
     - here
@@ -15,6 +16,9 @@ webr:
     - gtExtras
 editor_options: 
   chunk_output_type: console
+toc: true
+toc-title: "Aller à"
+lang: fr
 ---
 
 
@@ -23,10 +27,11 @@ editor_options:
 
 
   
-```{r}
+```{webr}
 #| echo: false
 #| message: false
 #| warning: false
+#| autorun: true
 
 library(readxl)
 
@@ -151,7 +156,7 @@ Après avoir verifier l'exhaustivité des districts dans les differentes sources
 library(here)
 knitr::include_graphics(here("img/verif", "datasources.gif"))
 
-knitr::include_graphics(here(("img/verif", "assess.gif"))
+knitr::include_graphics(here("img/verif", "assess.gif"))
 
 ```
 
@@ -189,6 +194,7 @@ La @fig-fill montre chaque étape de remplissage de la feuille de calcul pour l'
 #| message: false
 
 library(here)
+
 knitr::include_graphics(here("img/survivants", "input_district.png"))
 
 knitr::include_graphics(here("img/survivants", "input_year.png"))
@@ -206,7 +212,7 @@ knitr::include_graphics(here("img/survivants", "input_ihme.png"))
 ```
 
 
-Lorsque toute les données nécéssaires à l'estimation on peut alors calculer les diffèrentes populations. Il convient de rappeler que la couverture vaccinale est calculée par $ \text{cv} = \frac{\text{nombre de vaccinés (n)}}{\text{population cible (N)}}$ et l'estimation de la population ajustée est définie par $ N' = \frac{\text{n}}{cv'}$. De ce fait pour calculer la couverture vaccinale au DTC1 on divisera les données de la colone `D` allant de `D5` à `D523` par celles de la colonne `F` allant de`F5` à `F523`. Pour le DTC3: `E5`:`E523` divisé par `F5`:`F523`. Pour estimer les populations de nourissons survivants ajustées on devra divisé la colone `D5:D523` par `I5:I523`, similairement on estimerait les extrêmes grace aux bornes de l'intervalle de confiance avec les quotients D5:D523/J5:J523 et D5:D523/K5:K523. Enfin pour estimer la population en utilisant les données de l'IHME on fera le quotien `D5:D523/S5:S523`. 
+Lorsque toute les données nécéssaires à l'estimation on peut alors calculer les diffèrentes populations. Il convient de rappeler que la couverture vaccinale est calculée par $\text{cv} = \frac{\text{nombre de vaccinés (n)}}{\text{population cible (N)}}$ et l'estimation de la population ajustée est définie par $N' = \frac{\text{n}}{cv'}$. De ce fait pour calculer la couverture vaccinale au DTC1 on divisera les données de la colone `D` allant de `D5` à `D523` par celles de la colonne `F` allant de`F5` à `F523`. Pour le DTC3: `E5`:`E523` divisé par `F5`:`F523`. Pour estimer les populations de nourissons survivants ajustées on devra divisé la colone `D5:D523` par `I5:I523`, similairement on estimerait les extrêmes grace aux bornes de l'intervalle de confiance avec les quotients `D5:D523/J5:J523` et `D5:D523/K5:K523`. Enfin pour estimer la population en utilisant les données de l'IHME on fera le quotien `D5:D523/S5:S523`. 
 
 
 
@@ -606,7 +612,7 @@ On peut donc déja consolider les différentes population après ajustement
 
 
 
-```{r}
+```{webr}
 df_pop <- bind_rows(list(scenar1, scenar2, scenar3, scenar4, scenar5))
 
 df_pop |> select(province, zone_sante, survivants_admin, pop_adj)|>
