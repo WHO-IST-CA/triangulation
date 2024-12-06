@@ -1,31 +1,148 @@
 ---
-title: "Tutoriel sur l'ajustement des populations cibles de la vaccination de routine en Rèpublique Démocratique du Congo"
+title: "Tutoriel sur l'ajustement des populations cibles de la vaccination de routine en République Démocratique du Congo"
+page-layout: full
+title-block-banner: true
 format: live-html
 resources:
   - data
+  - download
+  - img
 engine: knitr
 date-modified: last-modified
 webr:
   packages:
     - here
     - tidyverse
-    - sf
     - janitor
     - readxl
     - gt
     - ggstatsplot
     - ggridges
     - gtExtras
+    - skimr
 editor_options: 
   chunk_output_type: console
 toc: true
 toc-title: "Aller à"
 lang: fr
+other-links:
+  - text: "Sources des données"
+    icon: download
+    href: download/consolidated_pop_and_vaccination_data.xlsx
+  - text: "Feuille de calcul pour l'ajustement"
+    icon: download
+    href: download/Tableau_ajustement_Cibles_PEV_workshop.xlsx
+  - text: 'Population Ajustée RDC'
+    href: download/pop_ajusted_rdc.csv
+    icon: download
+
 ---
 
 
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+```{=html}
+
+<input type="checkbox" id="disclaimer-checkbox" style="display: none;">
+<label for="disclaimer-checkbox" id="disclaimer-label" style="display: none;"></label>
+
+<div id="disclaimer-popup" class="popup" role="dialog" aria-labelledby="disclaimer-title" aria-describedby="disclaimer-text">
+  <div class="popup-content">
+    <h2 id="disclaimer-title">Clause de non-responsabilité</h2>
+    <p id="disclaimer-text">
+      Ce tutoriel n’est pas une publication officielle de l’Organisation mondiale de la Santé. Toutes les données incluses dans ce tutoriel sont provisoires et peuvent être modifiées après vérification. 
+      <br><br>
+      Ce tutoriel est interactif avec une session R ouverte sur l'ajustement des populations cibles de la vaccination. Les utilisateurs peuvent interagir librement avec le code pour effectuer différentes expérimentations.
+      <br><br>
+      Pour toute question concernant ce tutoriel, veuillez contacter : 
+      <a href="mailto:nguimbisb@who.int">nguimbisb@who.int</a>.
+    </p>
+    <button id="agree-button" class="popup-button">J'ai compris</button>
+  </div>
+</div>
+
+<style>
+  /* Styles globaux */
+  body {
+   
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+
+  /* Styles pour le popup */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .popup-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .popup-content h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 1rem;
+  }
+
+  .popup-content p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .popup-content a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .popup-content a:hover {
+    text-decoration: underline;
+  }
+
+  .popup-button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .popup-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<script>
+  document.getElementById('agree-button').addEventListener('click', function () {
+    document.getElementById('disclaimer-popup').style.display = 'none';
+    document.getElementById('disclaimer-checkbox').checked = true;
+  });
+</script>
+
+```
+
 
 
   
@@ -34,6 +151,8 @@ lang: fr
 #| message: false
 #| warning: false
 #| autorun: true
+
+knitr::opts_chunk$set(warning = F, message = F)
 
 library(readxl)
 
@@ -57,27 +176,7 @@ pop <- read_excel(here("data", "adjusted.xlsx"), sheet = 4, skip = 4)|>
   mutate(survivants_admin = as.numeric(survivants_admin))
 
 
-my_theme <- theme_classic(base_family = "Spline Sans") +
-  theme(
-    text = element_text(color = "gray20", size = 12.5),
-    rect = element_blank(), # transparent background
-    plot.title = (element_text(face = "bold", hjust = 0.5, size = 11)),
-    plot.subtitle = (element_text(hjust = 0.5, size = 8, color = alpha("black", 0.7))),
-    plot.caption = element_text(size = 6.5, color = "gray50", hjust = 1),
-    legend.position = "bottom",
-    legend.text = element_text(size = 8),
-    legend.key.size = unit(1, "line"),
-    axis.title = element_text(color = alpha("black", 0.8), size = 14),
-    axis.text = element_text(color = alpha("gray20", 0.7), size = 12),
-    axis.line = element_line(color = "gray40", linewidth = 0.5),
-    axis.line.y = element_blank(),
-    panel.grid.major = element_line(color = alpha("gray50", 0.1), linewidth = 0.25),
-    strip.background = element_rect(fill = alpha("#0070c0", 1), color = "transparent"),
-    strip.text = element_text(face = "bold", colour = "white"),
-    panel.spacing.x = unit(3, "mm"),
-    title = element_text(face = "bold")
-  )
-theme_set(my_theme)
+
 
 options(scipen = 999)
 ```
@@ -100,7 +199,7 @@ A la fin de ce tutoriel, les particpants devront être capables de:
 
 ## Outils de l'atelier 
 
-Pour cet atelier les partipants devront travailler avec les feuilles de calcul excel notamment: le fichier ![consolidated_pop_and_vaccination_data.xlsx]("downlaod/consolidated_pop_and_vaccination_data.xlsx") qui contient les sources de données nécessaires pour les estimations et le fichier  ![Tableau_adjustement_Cibles_PEV.xlsx ]("downlaod/Tableau_adjustement_Cibles_PEV.xlsx") 
+Pour cet atelier les partipants devront travailler avec les feuilles de calcul excel notamment: le fichier *`consolidated_pop_and_vaccination_data.xlsx`* qui contient les sources de données nécessaires pour les estimations et le fichier  *`Tableau_adjustement_Cibles_PEV.xlsx`* à télécharger sur la section **Autres liens** à droite de votre écran. 
 
 Le fichier `consolidated_pop_and_vaccination_data.xlsx` comprend: 
 - une feuille `ecv2023_0_11` qui contient les données du DHIS 2 et des couvertures de l’ECV chez les 0-11 mois 
@@ -118,7 +217,7 @@ Le fichier `Tableau_adjustement_Cibles_PEV.xlsx` qui comprends:
 
 ## Structure du tutoriel 
 
-Ce tutoriel est divisé en 
+Ce tutoriel est divisé en 7 parties:
 
 - Revue des conditions de validité de l’estimation 
 - Vérification de la disponibilité des principales données pour réaliser l’estimation 
@@ -142,7 +241,7 @@ Cette estimation est la base de la correction des population cible en utilisant 
 ## Vérification de la disponibilité des principales données pour réaliser l’estimation
 
 Avant de passer à l'estimation des populations cibles, il faut se rassurer que les données nécéssaires soient disponibles et non aberrantes. Ainsi donc il est opportun de se rassurer dans un premier temps l'exhaustivité des différents zones de santé dans toutes les sources de données: populations DHIS 2, couvertures ECV & IHME, et  données de vaccination de routine. En RDC, il existe 519 zones de santé, il faudrait se rassurer que dans chacune des differentes source de données que les districts de santé ne soient pas en doublon et que le total de district de santé soit égal à 519.
-Après avoir verifier l'exhaustivité des districts dans les differentes sources de données, il est impératif de verifier l'adéquacité des différentes données à savoir les couvertures vaccinales avec leurs intervalles de confiances, les populations cibles, et les données sur le nombre de vaccinés. Pour chacune de ces variables, il faut s'assurer qu'elles sont non nulles et non aberrantes. On devra donc verifier pour chacune des variables qu il n y ait aucune couverture manquante, aucune couverture vaccinale à 0% et aucun district avec aucun vacciné. On peut faire usage des filtres sur Excel afin de verifier chacune des variables comme le montre la @fig-data. 
+Après avoir verifier l'exhaustivité des districts dans les differentes sources de données, il est impératif de verifier l'adéquacité des différentes données à savoir les couvertures vaccinales avec leurs intervalles de confiances, les populations cibles, et les données sur le nombre de vaccinés. Pour chacune de ces variables, il faut s'assurer qu'elles sont non nulles et non aberrantes. On devra donc verifier pour chacune des variables qu il n y ait aucune couverture manquante, aucune couverture vaccinale à 0% et aucun district avec aucun vacciné. On peut faire usage des filtres sur Excel afin de verifier chacune des variables comme le montrent les figures suivantes. 
 
 
 ```{r}
@@ -150,8 +249,8 @@ Après avoir verifier l'exhaustivité des districts dans les differentes sources
 #| fig-cap: 
 #|   - "Verification des sources de données"
 #|   - "Utilisation des filtres pour identifier les valeurs aberrantes et les valeurs manquantes"
-#| out-width: 50%
 #| fig-show: "hold"
+#| out-width: 100%
 #| warning: false
 #| message: false
 
@@ -178,7 +277,7 @@ Nous allons pour cet exercice demontrer comment estimer les populations cibles d
 - Ouvrir le fichier de calcul des populations ajustées
 - Copier les informations du fichier ecv2023_0_11 dans les colonnes correspondantes du fichier du calcul des populations 
 
-La @fig-fill montre chaque étape de remplissage de la feuille de calcul pour l'estimation des population.
+Les figures suivantes montrent chaque étape de remplissage de la feuille de calcul pour l'estimation des population.
 
 
 ```{r}
@@ -190,7 +289,6 @@ La @fig-fill montre chaque étape de remplissage de la feuille de calcul pour l'
 #|   - "Remplissage des couvertures en DTC1 de l'ECV"
 #|   - "Remplissage des Intervalles de confiance de la couverture en DTC1 de l'ECV"
 #|   - "Remplissage des couvertures en DTC1 de IHME"
-#| out-width: 50%
 #| fig-show: "hold"
 #| warning: false
 #| message: false
@@ -321,6 +419,31 @@ Afin de mettre en oeuvre ces différents scénario, nous allons utiliser R les c
 
 Avant de procéder à la mise en place des différents scénario va dabord effectuer une exploration des données.
 
+
+```{webr}
+#| out-width: 100% 
+skimr::skim(pop)
+```
+
+Le jeu de données pop présente contient les informations qui ont été générées dans la première partie de ce tutoriel. <br> 
+- province: Province <br>
+- zone_sante: Zone de santé <br>
+- annee : Presente l'année concernée par chaque ligne <br> 
+- dtc1_vaccinated: Nombre de vaccinés au DTC1 <br>
+- survivants_admin: Nombre de survivants estimé par le DHIS2 <br>
+- cv_dtc1_admin: Couverture administrative en DTC1 <br>
+- survivants_ecv: Nombre de survivants estimé par l'ECV 2023 <br>
+- cv_dtc1_ecv: Couverture au DTC1 estimé par l'ECV <br>
+- variation_ecv_dtc1: Taux de variation entre les survivants estimés par le DHIS2 et ECV <br>
+- survivants_ihme: Survivants estimés par le model IHME <br>
+- cv_dtc1_ihme: Couverture au DTC1 estimé par IHME <br>
+- variation_ihme_dtc1: Taux de variation entre les survivants estimés par le DHIS2 et ECV <br>
+- naiss_dhis2: Naissances vivantes estimées par le DHIS 2 <br>
+- naiss_ecv: Naissances vivantes estimées par les couvertures au BCG de l'ECV <br>
+- bcg: Nombre de vaccinés au BCG <br>
+- variation_bcg: Taux de variation entre les naissances vivantes estimées par le DHIS2 et ECV <br>
+
+
 On va dabord explorer la distribution des couvertures vaccinales
 
 
@@ -369,6 +492,8 @@ On voit que les couvertures administratives sont en général plus élevées que
 
 
 ```{webr}
+#| out-width: 100%
+#| fig-height: 8
 library(ggridges)
 pop |> pivot_longer(cols = c(cv_dtc1_admin, cv_dtc1_ecv, cv_dtc1_ihme), names_to = "source", values_to = 'cv')%>%
   ggplot(aes(y = province, x = cv))+
@@ -407,19 +532,20 @@ On peut investiger la distribution des differents taux de variation. On va dabor
 
 ```{webr}
 #| out-width: 100%
+#| fig-height: 25
 ecart <- 1.5 * IQR(pop$variation_ecv_dtc1, na.rm = T)
 mn <- quantile(pop$variation_ecv_dtc1, 1/4, na.rm = T) - ecart
 mx <- quantile(pop$variation_ecv_dtc1, 3/4, na.rm = T) + ecart
 pop |> filter(between(variation_ecv_dtc1, mn, mx))|>
   ggplot(aes(zone_sante, y = variation_ecv_dtc1))+
   geom_rect(xmin = -Inf, xmax = Inf, ymin = -0.1, ymax = 0.1, fill = "skyblue", alpha = 0.3, inherit.aes = F, color = NA)+
-  geom_point( size = 3 )+
-  geom_hline(yintercept = c(-0.1, 0.1), linetype = 2, color = "grey70", linewidth = 0.8)+
-  facet_wrap(vars(province), nrow = 3, scales = "free_x")+
+  geom_point( size = 1.5 )+
+  geom_hline(yintercept = c(-0.1, 0.1), linetype = 2, color = "grey70", linewidth = 0.2)+
+  facet_wrap(vars(province), ncol = 3, scales = "free_x")+
   scale_y_continuous("Taux de variation au DTC1 (ECV)", labels = scales::label_percent())+
   theme(
-    axis.text.x = element_text(angle = 90, size = 5),
-    axis.ticks.y = element_blank()
+    axis.text.x = element_text(angle = 90, size = 7),
+    axis.ticks = element_blank()
   )
 ```
 
@@ -430,6 +556,7 @@ On peut observer que le taux de varie enormement selon la province. Les province
 
 ```{webr}
 #| out-width: 100%
+#| fig-height: 25
 ecart <- 1.5 * IQR(pop$variation_ihme_dtc1, na.rm = T)
 mn <- quantile(pop$variation_ihme_dtc1, 1/4, na.rm = T) - ecart
 mx <- quantile(pop$variation_ihme_dtc1, 3/4, na.rm = T) + ecart
@@ -437,12 +564,12 @@ mx <- quantile(pop$variation_ihme_dtc1, 3/4, na.rm = T) + ecart
 pop |> filter(between(variation_ihme_dtc1, mn, mx))|>
   ggplot(aes(zone_sante, y = variation_ihme_dtc1))+
   geom_rect(xmin = -Inf, xmax = Inf, ymin = -0.1, ymax = 0.1, fill = "skyblue", alpha = 0.3, inherit.aes = F, color = NA)+
-  geom_point( size = 3 )+
-  geom_hline(yintercept = c(-0.1, 0.1), linetype = 2, color = "grey70", linewidth = 0.8)+
-  facet_wrap(vars(province), nrow = 3, scales = "free_x")+
+  geom_point( size = 1.5 )+
+  geom_hline(yintercept = c(-0.1, 0.1), linetype = 2, color = "grey70", linewidth = 0.2)+
+  facet_wrap(vars(province), ncol = 3, scales = "free_x")+
   scale_y_continuous("Taux de variation au DTC1 (IHME)", labels = scales::label_percent())+
   theme(
-    axis.text.x = element_text(angle = 90, size = 5),
+    axis.text.x = element_text(angle = 90, size = 7),
     axis.ticks.y = element_blank()
   )
 ```

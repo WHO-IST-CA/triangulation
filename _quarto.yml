@@ -12,7 +12,7 @@ website:
   repo-actions: [source, issue]
 
   navbar:
-    logo: /static/img/logo-en.svg
+    logo: /img/static/logo-en.svg
     background: light
     foreground: dark
     right:
