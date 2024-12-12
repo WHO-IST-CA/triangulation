@@ -464,6 +464,7 @@ infos <- pop|> mutate(dtc1_vaccinated = NA_integer_, survivants_routine = NA_cha
 
 ui <- page_sidebar(
   useShinyjs(),
+  useShinyWidgets(),
 
   # Shiny example
   theme = bs_theme(
