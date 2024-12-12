@@ -99,7 +99,7 @@ cookieconsent.run({
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,7 +136,9 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-other-links"><h2>Autres liens</h2><ul><li><a href="data/infos.xlsx"><i class="bi bi-download"></i>Informations à remplir</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -610,8 +612,9 @@ ui &lt;- page_sidebar(
     bootswatch = "litera",
   ),
   sidebar = sidebar(
-    h5("Telechargez le fichier excel à remplir"),
-    downloadButton("info", "Telechargez le fichier à remplir", icon = icon("download")),
+    p("Telechargez le fichier informations à remplir situé à droite de votre écran"),
+    br(),
+    br(),
     h5("Lire le fichier rempli dans l'application"),
     fileInput("info_update", "Lire le fichier rempli", multiple = F, accept = ".xlsx", placeholder = "No file"),
     h5("Cliquez sur le boutton si vous avez rempli les données de l'ECV"),
@@ -622,8 +625,7 @@ ui &lt;- page_sidebar(
   card(
     card_header(
       h2("Tableau des populations ajustées"),
-      downloadButton("adjusted", "Telechargez les populations ajustées", icon = icon("download"))
-    ),
+      ),
     card_body(
       DTOutput("tab_adjusted")
     )
@@ -637,14 +639,7 @@ ui &lt;- page_sidebar(
 
 
 server &lt;- function(input, output, session) {
-  output$info &lt;- downloadHandler(
-    filename = function() {
-      paste0("infos.xlsx")
-    },
-    content = function(file) {
-      writexl::write_xlsx(infos, file)
-    }
-  )
+ 
 
 
   data &lt;- reactiveValues(infos = NULL, merged = NULL)
@@ -738,21 +733,20 @@ server &lt;- function(input, output, session) {
 
 
 
-
-  output$adjusted &lt;- downloadHandler(
-    filename = function() {
-      paste0("pop_ajusted.xlsx")
-    },
-    content = function(file) {
-      writexl::write_xlsx(tab(), file)
-    }
-  )
-
-
-  output$tab_adjusted &lt;- renderDT({
-
+output$tab_adjusted &lt;- renderDT({
     req(tab())
-  tab()
+    datatable(tab(),
+              extensions = c('Buttons'),
+              options = list(
+                dom = 'Bfrtip',
+                buttons = list(
+                  list(extend = 'copy', text = 'Copier'),
+                  list(extend = 'csv', text = 'CSV'),
+                  list(extend = 'excel', text = 'Excel'),
+                  list(extend = 'pdf', text = 'PDF')
+                )
+              )
+    )
   })
 
 
