@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Outil d’ajustement des population en RDC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href=".//static/img/who-emblem.png" rel="icon" type="image/png">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content=".">
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/shinylive.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/static/logo-en.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text">Tutoriel</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pop_calculator.html" aria-current="page"> 
+<span class="menu-text">Outil d’ajustement</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Outil d’ajustement des population en RDC</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 800
+
+ 
+library(shiny)
+library(bslib)
+library(readxl)
+library(writexl)
+library(here)
+library(bsicons)
+library(shinyWidgets)
+library(dplyr)
+library(shinyjs)
+library(DT)
+
+
+
+
+
+pop &lt;- structure(list(province = c("bu Bas Uele Province", "bu Bas Uele Province", 
+                            "bu Bas Uele Province", "bu Bas Uele Province", "bu Bas Uele Province", 
+                            "bu Bas Uele Province", "bu Bas Uele Province", "bu Bas Uele Province", 
+                            "bu Bas Uele Province", "bu Bas Uele Province", "bu Bas Uele Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "eq Equateur Province", "eq Equateur Province", "eq Equateur Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hk Haut Katanga Province", "hk Haut Katanga Province", "hk Haut Katanga Province", 
+                            "hl Haut Lomami Province", "hl Haut Lomami Province", "hl Haut Lomami Province", 
+                            "hl Haut Lomami Province", "hl Haut Lomami Province", "hl Haut Lomami Province", 
+                            "hl Haut Lomami Province", "hl Haut Lomami Province", "hl Haut Lomami Province", 
+                            "hl Haut Lomami Province", "hl Haut Lomami Province", "hl Haut Lomami Province", 
+                            "hl Haut Lomami Province", "hl Haut Lomami Province", "hl Haut Lomami Province", 
+                            "hl Haut Lomami Province", "hu Haut Uele Province", "hu Haut Uele Province", 
+                            "hu Haut Uele Province", "hu Haut Uele Province", "hu Haut Uele Province", 
+                            "hu Haut Uele Province", "hu Haut Uele Province", "hu Haut Uele Province", 
+                            "hu Haut Uele Province", "hu Haut Uele Province", "hu Haut Uele Province", 
+                            "hu Haut Uele Province", "hu Haut Uele Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "it Ituri Province", 
+                            "it Ituri Province", "it Ituri Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "kc Kongo Central Province", "kc Kongo Central Province", "kc Kongo Central Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "ke Kasai Oriental Province", "ke Kasai Oriental Province", 
+                            "ke Kasai Oriental Province", "kg Kwango Province", "kg Kwango Province", 
+                            "kg Kwango Province", "kg Kwango Province", "kg Kwango Province", 
+                            "kg Kwango Province", "kg Kwango Province", "kg Kwango Province", 
+                            "kg Kwango Province", "kg Kwango Province", "kg Kwango Province", 
+                            "kg Kwango Province", "kg Kwango Province", "kg Kwango Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kl Kwilu Province", "kl Kwilu Province", "kl Kwilu Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kn Kinshasa Province", 
+                            "kn Kinshasa Province", "kn Kinshasa Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "kr Kasai Central Province", "kr Kasai Central Province", 
+                            "kr Kasai Central Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ks Kasai Province", "ks Kasai Province", 
+                            "ks Kasai Province", "ll Lualaba Province", "ll Lualaba Province", 
+                            "ll Lualaba Province", "ll Lualaba Province", "ll Lualaba Province", 
+                            "ll Lualaba Province", "ll Lualaba Province", "ll Lualaba Province", 
+                            "ll Lualaba Province", "ll Lualaba Province", "ll Lualaba Province", 
+                            "ll Lualaba Province", "ll Lualaba Province", "ll Lualaba Province", 
+                            "lm Lomami Province", "lm Lomami Province", "lm Lomami Province", 
+                            "lm Lomami Province", "lm Lomami Province", "lm Lomami Province", 
+                            "lm Lomami Province", "lm Lomami Province", "lm Lomami Province", 
+                            "lm Lomami Province", "lm Lomami Province", "lm Lomami Province", 
+                            "lm Lomami Province", "lm Lomami Province", "lm Lomami Province", 
+                            "md Maindombe Province", "md Maindombe Province", "md Maindombe Province", 
+                            "md Maindombe Province", "md Maindombe Province", "md Maindombe Province", 
+                            "md Maindombe Province", "md Maindombe Province", "md Maindombe Province", 
+                            "md Maindombe Province", "md Maindombe Province", "md Maindombe Province", 
+                            "md Maindombe Province", "md Maindombe Province", "mg Mongala Province", 
+                            "mg Mongala Province", "mg Mongala Province", "mg Mongala Province", 
+                            "mg Mongala Province", "mg Mongala Province", "mg Mongala Province", 
+                            "mg Mongala Province", "mg Mongala Province", "mg Mongala Province", 
+                            "mg Mongala Province", "mg Mongala Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "mn Maniema Province", 
+                            "mn Maniema Province", "mn Maniema Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nk Nord Kivu Province", "nk Nord Kivu Province", "nk Nord Kivu Province", 
+                            "nu Nord Ubangi Province", "nu Nord Ubangi Province", "nu Nord Ubangi Province", 
+                            "nu Nord Ubangi Province", "nu Nord Ubangi Province", "nu Nord Ubangi Province", 
+                            "nu Nord Ubangi Province", "nu Nord Ubangi Province", "nu Nord Ubangi Province", 
+                            "nu Nord Ubangi Province", "nu Nord Ubangi Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sk Sud Kivu Province", "sk Sud Kivu Province", "sk Sud Kivu Province", 
+                            "sn Sankuru Province", "sn Sankuru Province", "sn Sankuru Province", 
+                            "sn Sankuru Province", "sn Sankuru Province", "sn Sankuru Province", 
+                            "sn Sankuru Province", "sn Sankuru Province", "sn Sankuru Province", 
+                            "sn Sankuru Province", "sn Sankuru Province", "sn Sankuru Province", 
+                            "sn Sankuru Province", "sn Sankuru Province", "sn Sankuru Province", 
+                            "sn Sankuru Province", "su Sud Ubangi Province", "su Sud Ubangi Province", 
+                            "su Sud Ubangi Province", "su Sud Ubangi Province", "su Sud Ubangi Province", 
+                            "su Sud Ubangi Province", "su Sud Ubangi Province", "su Sud Ubangi Province", 
+                            "su Sud Ubangi Province", "su Sud Ubangi Province", "su Sud Ubangi Province", 
+                            "su Sud Ubangi Province", "su Sud Ubangi Province", "su Sud Ubangi Province", 
+                            "su Sud Ubangi Province", "su Sud Ubangi Province", "tn Tanganyika Province", 
+                            "tn Tanganyika Province", "tn Tanganyika Province", "tn Tanganyika Province", 
+                            "tn Tanganyika Province", "tn Tanganyika Province", "tn Tanganyika Province", 
+                            "tn Tanganyika Province", "tn Tanganyika Province", "tn Tanganyika Province", 
+                            "tn Tanganyika Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tp Tshopo Province", "tp Tshopo Province", "tp Tshopo Province", 
+                            "tu Tshuapa Province", "tu Tshuapa Province", "tu Tshuapa Province", 
+                            "tu Tshuapa Province", "tu Tshuapa Province", "tu Tshuapa Province", 
+                            "tu Tshuapa Province", "tu Tshuapa Province", "tu Tshuapa Province", 
+                            "tu Tshuapa Province", "tu Tshuapa Province", "tu Tshuapa Province", 
+                            "lm Lomami Province"), district = c("bu Aketi Zone de Santé", 
+                                                                "bu Ango Zone de Santé", "bu Bili Zone de Santé", "bu Bondo Zone de Santé", 
+                                                                "bu Buta Zone de Santé", "bu Ganga Zone de Santé", "bu Likati Zone de Santé", 
+                                                                "bu Monga Zone de Santé", "bu Poko Zone de Santé", "bu Titule Zone de Santé", 
+                                                                "bu Viadana Zone de Santé", "eq Basankusu Zone de Santé", "eq Bikoro Zone de Santé", 
+                                                                "eq Bolenge Zone de Santé", "eq Bolomba Zone de Santé", "eq Bomongo Zone de Santé", 
+                                                                "eq Djombo Zone de Santé", "eq Iboko Zone de Santé", "eq Ingende Zone de Santé", 
+                                                                "eq Irebu Zone de Santé", "eq Lilanga Bobangi Zone de Santé", 
+                                                                "eq Lotumbe Zone de Santé", "eq Lukolela Zone de Santé", "eq Makanza Zone de Santé", 
+                                                                "eq Mampoko Zone de Santé", "eq Mbandaka Zone de Santé", "eq Monieka Zone de Santé", 
+                                                                "eq Ntondo Zone de Santé", "eq Wangata Zone de Santé", "hk Kafubu Zone de Santé", 
+                                                                "hk Kamalondo Zone de Santé", "hk Kambove Zone de Santé", "hk Kampemba Zone de Santé", 
+                                                                "hk Kapolowe Zone de Santé", "hk Kasenga Zone de Santé", "hk Kashobwe Zone de Santé", 
+                                                                "hk Katuba Zone de Santé", "hk Kenya Zone de Santé", "hk Kikula Zone de Santé", 
+                                                                "hk Kilela Balanda Zone de Santé", "hk Kilwa Zone de Santé", 
+                                                                "hk Kipushi Zone de Santé", "hk Kisanga Zone de Santé", "hk Kowe Zone de Santé", 
+                                                                "hk Likasi Zone de Santé", "hk Lubumbashi Zone de Santé", "hk Lukafu Zone de Santé", 
+                                                                "hk Mitwaba Zone de Santé", "hk Mufunga Sampwe Zone de Santé", 
+                                                                "hk Mumbunda Zone de Santé", "hk Panda Zone de Santé", "hk Pweto Zone de Santé", 
+                                                                "hk Ruashi Zone de Santé", "hk Sakania Zone de Santé", "hk Tshamilemba Zone de Santé", 
+                                                                "hk Vangu Zone de Santé", "hl Baka Zone de Santé", "hl Bukama Zone de Santé", 
+                                                                "hl Butumba Zone de Santé", "hl Kabondo Dianda Zone de Santé", 
+                                                                "hl Kabongo Zone de Santé", "hl Kamina Zone de Santé", "hl Kaniama Zone de Santé", 
+                                                                "hl Kayamba Zone de Santé", "hl Kinda Zone de Santé", "hl Kinkondja Zone de Santé", 
+                                                                "hl Kitenge Zone de Santé", "hl Lwamba Zone de Santé", "hl Malemba Nkulu Zone de Santé", 
+                                                                "hl Mukanga Zone de Santé", "hl Mulongo Zone de Santé", "hl Songa Zone de Santé", 
+                                                                "hu Aba Zone de Santé", "hu Boma Mangbetu Zone de Santé", "hu Doruma Zone de Santé", 
+                                                                "hu Dungu Zone de Santé", "hu Faradje Zone de Santé", "hu Gombari Zone de Santé", 
+                                                                "hu Isiro Zone de Santé", "hu Makoro Zone de Santé", "hu Niangara Zone de Santé", 
+                                                                "hu Pawa Zone de Santé", "hu Rungu Zone de Santé", "hu Wamba Zone de Santé", 
+                                                                "hu Watsa Zone de Santé", "it Adi Zone de Santé", "it Adja Zone de Santé", 
+                                                                "it Angumu Zone de Santé", "it Ariwara Zone de Santé", "it Aru Zone de Santé", 
+                                                                "it Aungba Zone de Santé", "it Bambu Zone de Santé", "it Biringi Zone de Santé", 
+                                                                "it Boga Zone de Santé", "it Bunia Zone de Santé", "it Damas Zone de Santé", 
+                                                                "it Drodro Zone de Santé", "it Fataki Zone de Santé", "it Gety Zone de Santé", 
+                                                                "it Jiba Zone de Santé", "it Kambala Zone de Santé", "it Kilo Zone de Santé", 
+                                                                "it Komanda Zone de Santé", "it Laybo Zone de Santé", "it Linga Zone de Santé", 
+                                                                "it Lita Zone de Santé", "it Logo Zone de Santé", "it Lolwa Zone de Santé", 
+                                                                "it Mahagi Zone de Santé", "it Mambasa Zone de Santé", "it Mandima Zone de Santé", 
+                                                                "it Mangala Zone de Santé", "it Mongbwalu Zone de Santé", "it Nia Nia Zone de Santé", 
+                                                                "it Nizi Zone de Santé", "it Nyankunde Zone de Santé", "it Nyarambe Zone de Santé", 
+                                                                "it Rethy Zone de Santé", "it Rimba Zone de Santé", "it Rwampara Zone de Santé", 
+                                                                "it Tchomia Zone de Santé", "kc Boko Kivulu Zone de Santé", 
+                                                                "kc Boma Bungu Zone de Santé", "kc Boma Zone de Santé", "kc Gombe Matadi Zone de Santé", 
+                                                                "kc Inga Zone de Santé", "kc Kangu Zone de Santé", "kc Kibunzi Zone de Santé", 
+                                                                "kc Kimpangu Zone de Santé", "kc Kimpese Zone de Santé", "kc Kimvula Zone de Santé", 
+                                                                "kc Kinkonzi Zone de Santé", "kc Kisantu Zone de Santé", "kc Kitona Zone de Santé", 
+                                                                "kc Kizu Zone de Santé", "kc Kuimba Zone de Santé", "kc Kwilu Ngongo Zone de Santé", 
+                                                                "kc Lukula Zone de Santé", "kc Luozi Zone de Santé", "kc Mangembo Zone de Santé", 
+                                                                "kc Massa Zone de Santé", "kc Matadi Zone de Santé", "kc Mbanza Ngungu Zone de Santé", 
+                                                                "kc Muanda Zone de Santé", "kc Ngidinga Zone de Santé", "kc Nselo Zone de Santé", 
+                                                                "kc Nsona Mpangu Zone de Santé", "kc Nzanza Zone de Santé", 
+                                                                "kc Seke Banza Zone de Santé", "kc Sona Bata Zone de Santé", 
+                                                                "kc Tshela Zone de Santé", "kc Vaku Zone de Santé", "ke Bibanga Zone de Santé", 
+                                                                "ke Bipemba Zone de Santé", "ke Bonzola Zone de Santé", "ke Cilundu Zone de Santé", 
+                                                                "ke Citenge Zone de Santé", "ke Dibindi Zone de Santé", "ke Diulu Zone de Santé", 
+                                                                "ke Kabeya Kamwanga Zone de Santé", "ke Kansele Zone de Santé", 
+                                                                "ke Kasansa Zone de Santé", "ke Lubilanji Zone de Santé", "ke Lukelenge Zone de Santé", 
+                                                                "ke Miabi Zone de Santé", "ke Mpokolo Zone de Santé", "ke Mukumbi Zone de Santé", 
+                                                                "ke Muya Zone de Santé", "ke Nzaba Zone de Santé", "ke Tshilenge Zone de Santé", 
+                                                                "ke Tshishimbi Zone de Santé", "kg Boko Zone de Santé", "kg Feshi Zone de Santé", 
+                                                                "kg Kahemba Zone de Santé", "kg Kajiji Zone de Santé", "kg Kasongo Lunda Zone de Santé", 
+                                                                "kg Kenge Zone de Santé", "kg Kimbao Zone de Santé", "kg Kisanji Zone de Santé", 
+                                                                "kg Kitenda Zone de Santé", "kg Mwela Lembwa Zone de Santé", 
+                                                                "kg Panzi Zone de Santé", "kg Popokabaka Zone de Santé", "kg Tembo Zone de Santé", 
+                                                                "kg Wamba Lwadi Zone de Santé", "kl Bagata Zone de Santé", 
+                                                                "kl Bandundu Zone de Santé", "kl Bulungu Zone de Santé", "kl Djuma Zone de Santé", 
+                                                                "kl Gungu Zone de Santé", "kl Idiofa Zone de Santé", "kl Ipamu Zone de Santé", 
+                                                                "kl Kikongo Zone de Santé", "kl Kikwit Nord Zone de Santé", 
+                                                                "kl Kikwit Sud Zone de Santé", "kl Kimputu Zone de Santé", 
+                                                                "kl Kingandu Zone de Santé", "kl Koshibanda Zone de Santé", 
+                                                                "kl Lusanga Zone de Santé", "kl Masi Manimba Zone de Santé", 
+                                                                "kl Moanza Zone de Santé", "kl Mokala Zone de Santé", "kl Mosango Zone de Santé", 
+                                                                "kl Mukedi Zone de Santé", "kl Mungindu Zone de Santé", "kl Pay Kongila Zone de Santé", 
+                                                                "kl Sia Zone de Santé", "kl Vanga Zone de Santé", "kl Yasa Bonga Zone de Santé", 
+                                                                "kn Bandalungwa Zone de Santé", "kn Barumbu Zone de Santé", 
+                                                                "kn Binza Meteo Zone de Santé", "kn Binza Ozone Zone de Santé", 
+                                                                "kn Biyela Zone de Santé", "kn Bumbu Zone de Santé", "kn Gombe Zone de Santé", 
+                                                                "kn Kalamu 1 Zone de Santé", "kn Kalamu 2 Zone de Santé", "kn Kasa Vubu Zone de Santé", 
+                                                                "kn Kikimi Zone de Santé", "kn Kimbanseke Zone de Santé", "kn Kingabwa Zone de Santé", 
+                                                                "kn Kingasani Zone de Santé", "kn Kinshasa Zone de Santé", 
+                                                                "kn Kintambo Zone de Santé", "kn Kisenso Zone de Santé", "kn Kokolo Zone de Santé", 
+                                                                "kn Lemba Zone de Santé", "kn Limete Zone de Santé", "kn Lingwala Zone de Santé", 
+                                                                "kn Makala Zone de Santé", "kn Maluku 1 Zone de Santé", "kn Maluku 2 Zone de Santé", 
+                                                                "kn Masina 1 Zone de Santé", "kn Masina 2 Zone de Santé", "kn Matete Zone de Santé", 
+                                                                "kn Mont Ngafula 1 Zone de Santé", "kn Mont Ngafula 2 Zone de Santé", 
+                                                                "kn Ndjili Zone de Santé", "kn Ngaba Zone de Santé", "kn Ngiri Ngiri Zone de Santé", 
+                                                                "kn Nsele Zone de Santé", "kn Police Zone de Santé", "kn Selembao Zone de Santé", 
+                                                                "kr Bena Leka Zone de Santé", "kr Bena Tshadi Zone de Santé", 
+                                                                "kr Bilomba Zone de Santé", "kr Bobozo Zone de Santé", "kr Bunkonde Zone de Santé", 
+                                                                "kr Demba Zone de Santé", "kr Dibaya Zone de Santé", "kr Kalomba Zone de Santé", 
+                                                                "kr Kananga Zone de Santé", "kr Katende Zone de Santé", "kr Katoka Zone de Santé", 
+                                                                "kr Luambo Zone de Santé", "kr Lubondaie Zone de Santé", "kr Lubunga Zone de Santé", 
+                                                                "kr Luiza Zone de Santé", "kr Lukonga Zone de Santé", "kr Masuika Zone de Santé", 
+                                                                "kr Mikalayi Zone de Santé", "kr Muetshi Zone de Santé", "kr Mutoto Zone de Santé", 
+                                                                "kr Ndekesha Zone de Santé", "kr Ndesha Zone de Santé", "kr Tshibala Zone de Santé", 
+                                                                "kr Tshikaji Zone de Santé", "kr Tshikula Zone de Santé", "kr Yangala Zone de Santé", 
+                                                                "ks Banga Lubaka Zone de Santé", "ks Bulape Zone de Santé", 
+                                                                "ks Dekese Zone de Santé", "ks Ilebo Zone de Santé", "ks Kakenge Zone de Santé", 
+                                                                "ks Kalonda Ouest Zone de Santé", "ks Kamonia Zone de Santé", 
+                                                                "ks Kamwesha Zone de Santé", "ks Kanzala Zone de Santé", "ks Kitangwa Zone de Santé", 
+                                                                "ks Luebo Zone de Santé", "ks Mikope Zone de Santé", "ks Mushenge Zone de Santé", 
+                                                                "ks Mutena Zone de Santé", "ks Mweka Zone de Santé", "ks Ndjoko Mpunda Zone de Santé", 
+                                                                "ks Nyanga Zone de Santé", "ks Tshikapa Zone de Santé", "ll Bunkeya Zone de Santé", 
+                                                                "ll Dilala Zone de Santé", "ll Dilolo Zone de Santé", "ll Fungurume Zone de Santé", 
+                                                                "ll Kafakumba Zone de Santé", "ll Kalamba Zone de Santé", "ll Kanzenze Zone de Santé", 
+                                                                "ll Kapanga Zone de Santé", "ll Kasaji Zone de Santé", "ll Lualaba Zone de Santé", 
+                                                                "ll Lubudi Zone de Santé", "ll Manika Zone de Santé", "ll Mutshatsha Zone de Santé", 
+                                                                "ll Sandoa Zone de Santé", "lm Kabinda Zone de Santé", "lm Kalambayi Kabanga Zone de Santé", 
+                                                                "lm Kalenda Zone de Santé", "lm Kalonda Est Zone de Santé", 
+                                                                "lm Kamana Zone de Santé", "lm Kamiji Zone de Santé", "lm Kanda Kanda Zone de Santé", 
+                                                                "lm Lubao Zone de Santé", "lm Ludimbi Lukula Zone de Santé", 
+                                                                "lm Luputa Zone de Santé", "lm Makota Zone de Santé", "lm Mulumba Zone de Santé", 
+                                                                "lm Mweneditu Zone de Santé", "lm Tshofa Zone de Santé", "lm Wikong Zone de Santé", 
+                                                                "md Banzow Moke Zone de Santé", "md Bokoro Zone de Santé", 
+                                                                "md Bolobo Zone de Santé", "md Bosobe Zone de Santé", "md Inongo Zone de Santé", 
+                                                                "md Kiri Zone de Santé", "md Kwamouth Zone de Santé", "md Mimia Zone de Santé", 
+                                                                "md Mushie Zone de Santé", "md Nioki Zone de Santé", "md Ntandembelo Zone de Santé", 
+                                                                "md Oshwe Zone de Santé", "md Pendjwa Zone de Santé", "md Yumbi Zone de Santé", 
+                                                                "mg Binga Zone de Santé", "mg Bongandanga Zone de Santé", "mg Boso Manzi Zone de Santé", 
+                                                                "mg Boso Mondanda Zone de Santé", "mg Bosondjo Zone de Santé", 
+                                                                "mg Bumba Zone de Santé", "mg Lisala Zone de Santé", "mg Lolo Zone de Santé", 
+                                                                "mg Pimu Zone de Santé", "mg Yamaluka Zone de Santé", "mg Yambuku Zone de Santé", 
+                                                                "mg Yamongili Zone de Santé", "mn Alunguli Zone de Santé", 
+                                                                "mn Ferekeni Zone de Santé", "mn Kabambare Zone de Santé", 
+                                                                "mn Kailo Zone de Santé", "mn Kalima Zone de Santé", "mn Kampene Zone de Santé", 
+                                                                "mn Kasongo Zone de Santé", "mn Kibombo Zone de Santé", "mn Kindu Zone de Santé", 
+                                                                "mn Kunda Zone de Santé", "mn Lubutu Zone de Santé", "mn Lusangi Zone de Santé", 
+                                                                "mn Obokote Zone de Santé", "mn Pangi Zone de Santé", "mn Punia Zone de Santé", 
+                                                                "mn Samba Zone de Santé", "mn Saramabila Zone de Santé", "mn Tunda Zone de Santé", 
+                                                                "nk Alimbongo Zone de Santé", "nk Bambo Zone de Santé", "nk Beni Zone de Santé", 
+                                                                "nk Biena Zone de Santé", "nk Binza Zone de Santé", "nk Birambizo Zone de Santé", 
+                                                                "nk Butembo Zone de Santé", "nk Goma Zone de Santé", "nk Itebero Zone de Santé", 
+                                                                "nk Kalunguta Zone de Santé", "nk Kamango Zone de Santé", "nk Karisimbi Zone de Santé", 
+                                                                "nk Katoyi Zone de Santé", "nk Katwa Zone de Santé", "nk Kayna Zone de Santé", 
+                                                                "nk Kibirizi Zone de Santé", "nk Kibua Zone de Santé", "nk Kirotshe Zone de Santé", 
+                                                                "nk Kyondo Zone de Santé", "nk Lubero Zone de Santé", "nk Mabalako Zone de Santé", 
+                                                                "nk Manguredjipa Zone de Santé", "nk Masereka Zone de Santé", 
+                                                                "nk Masisi Zone de Santé", "nk Musienene Zone de Santé", "nk Mutwanga Zone de Santé", 
+                                                                "nk Mweso Zone de Santé", "nk Nyiragongo Zone de Santé", "nk Oicha Zone de Santé", 
+                                                                "nk Pinga Zone de Santé", "nk Rutshuru Zone de Santé", "nk Rwanguba Zone de Santé", 
+                                                                "nk Vuhovi Zone de Santé", "nk Walikale Zone de Santé", "nu Abuzi Zone de Santé", 
+                                                                "nu Bili Zone de Santé", "nu Bosobolo Zone de Santé", "nu Businga Zone de Santé", 
+                                                                "nu Gbadolite Zone de Santé", "nu Karawa Zone de Santé", "nu Loko Zone de Santé", 
+                                                                "nu Mobayi Mbongo Zone de Santé", "nu Wapinda Zone de Santé", 
+                                                                "nu Wasolo Zone de Santé", "nu Yakoma Zone de Santé", "sk Bagira Zone de Santé", 
+                                                                "sk Bunyakiri Zone de Santé", "sk Fizi Zone de Santé", "sk Haut Plateau Zone de Santé", 
+                                                                "sk Ibanda Zone de Santé", "sk Idjwi Zone de Santé", "sk Itombwe Zone de Santé", 
+                                                                "sk Kabare Zone de Santé", "sk Kadutu Zone de Santé", "sk Kalehe Zone de Santé", 
+                                                                "sk Kalole Zone de Santé", "sk Kalonge Zone de Santé", "sk Kamituga Zone de Santé", 
+                                                                "sk Kaniola Zone de Santé", "sk Katana Zone de Santé", "sk Kaziba Zone de Santé", 
+                                                                "sk Kimbi Lulenge Zone de Santé", "sk Kitutu Zone de Santé", 
+                                                                "sk Lemera Zone de Santé", "sk Lulingu Zone de Santé", "sk Minembwe Zone de Santé", 
+                                                                "sk Minova Zone de Santé", "sk Miti Murhesa Zone de Santé", 
+                                                                "sk Mubumbano Zone de Santé", "sk Mulungu Zone de Santé", "sk Mwana Zone de Santé", 
+                                                                "sk Mwenga Zone de Santé", "sk Nundu Zone de Santé", "sk Nyangezi Zone de Santé", 
+                                                                "sk Nyantende Zone de Santé", "sk Ruzizi Zone de Santé", "sk Shabunda Zone de Santé", 
+                                                                "sk Uvira Zone de Santé", "sk Walungu Zone de Santé", "sn Bena Dibele Zone de Santé", 
+                                                                "sn Dikungu Zone de Santé", "sn Djalo Ndjeka Zone de Santé", 
+                                                                "sn Katako Kombe Zone de Santé", "sn Kole Zone de Santé", "sn Lodja Zone de Santé", 
+                                                                "sn Lomela Zone de Santé", "sn Lusambo Zone de Santé", "sn Minga Zone de Santé", 
+                                                                "sn Omendjadi Zone de Santé", "sn Ototo Zone de Santé", "sn Pania Mutombo Zone de Santé", 
+                                                                "sn Tshudi Loto Zone de Santé", "sn Tshumbe Zone de Santé", 
+                                                                "sn Vanga Kete Zone de Santé", "sn Wembo Nyama Zone de Santé", 
+                                                                "su Bangabola Zone de Santé", "su Bogosenubea Zone de Santé", 
+                                                                "su Bokonzi Zone de Santé", "su Bominenge Zone de Santé", "su Boto Zone de Santé", 
+                                                                "su Budjala Zone de Santé", "su Bulu Zone de Santé", "su Bwamanda Zone de Santé", 
+                                                                "su Gemena Zone de Santé", "su Kungu Zone de Santé", "su Libenge Zone de Santé", 
+                                                                "su Mawuya Zone de Santé", "su Mbaya Zone de Santé", "su Ndage Zone de Santé", 
+                                                                "su Tandala Zone de Santé", "su Zongo Zone de Santé", "tn Ankoro Zone de Santé", 
+                                                                "tn Kabalo Zone de Santé", "tn Kalemie Zone de Santé", "tn Kansimba Zone de Santé", 
+                                                                "tn Kiambi Zone de Santé", "tn Kongolo Zone de Santé", "tn Manono Zone de Santé", 
+                                                                "tn Mbulula Zone de Santé", "tn Moba Zone de Santé", "tn Nyemba Zone de Santé", 
+                                                                "tn Nyunzu Zone de Santé", "tp Bafwagbogbo Zone de Santé", 
+                                                                "tp Bafwasende Zone de Santé", "tp Banalia Zone de Santé", 
+                                                                "tp Basali Zone de Santé", "tp Basoko Zone de Santé", "tp Bengamisa Zone de Santé", 
+                                                                "tp Isangi Zone de Santé", "tp Kabondo Zone de Santé", "tp Lowa Zone de Santé", 
+                                                                "tp Lubunga Zone de Santé", "tp Makiso Kisangani Zone de Santé", 
+                                                                "tp Mangobo Zone de Santé", "tp Opala Zone de Santé", "tp Opienge Zone de Santé", 
+                                                                "tp Tshopo Zone de Santé", "tp Ubundu Zone de Santé", "tp Wanierukula Zone de Santé", 
+                                                                "tp Yabaondo Zone de Santé", "tp Yahisuli Zone de Santé", "tp Yahuma Zone de Santé", 
+                                                                "tp Yakusu Zone de Santé", "tp Yaleko Zone de Santé", "tp Yalimbongo Zone de Santé", 
+                                                                "tu Befale Zone de Santé", "tu Boende Zone de Santé", "tu Bokungu Zone de Santé", 
+                                                                "tu Busanga Zone de Santé", "tu Djolu Zone de Santé", "tu Ikela Zone de Santé", 
+                                                                "tu Lingomo Zone de Santé", "tu Mompono Zone de Santé", "tu Mondombe Zone de Santé", 
+                                                                "tu Monkoto Zone de Santé", "tu Wema Zone de Santé", "tu Yalifafu Zone de Santé", 
+                                                                "lm Ngandajika Zone de Santé"), couverture_ecv = c(0.314, 0.874, 
+                                                                                                                   1, 0.347, 0.707, 0.856, 0.435, 0.643, 0.691, 0.66, 0.583, 0.837, 
+                                                                                                                   0.783, 0.618, 1, 0.979, 0.794, 0.637, 0.783, 0.808, 0.896, 0.971, 
+                                                                                                                   0.962, 0.909, 0.922, 0.967, 0.928, 0.645, 1, 0.858, 0.832, 0.79, 
+                                                                                                                   0.669, 0.619, 0.395, 0.488, 0.875, 0.927, 0.778, 0.43, 0.491, 
+                                                                                                                   0.791, 0.838, 0.757, 0.66, 0.77, 0.497, 0.816, 0.731, 0.852, 
+                                                                                                                   0.783, 0.411, 0.658, 0.621, 0.752, 0.853, 0.844, 0.955, 1, 1, 
+                                                                                                                   0.937, 0.835, 0.769, 0.868, 0.957, 1, 0.916, 1, 0.966, 1, 1, 
+                                                                                                                   0.79, 0.911, 0.673, 0.88, 0.901, 0.646, 0.6, 0.748, 0.293, 0.633, 
+                                                                                                                   0.859, 0.453, 0.627, 0.872, 0.971, 1, 0.892, 1, 0.937, 0.817, 
+                                                                                                                   0.883, 0.933, 0.775, 1, 0.567, 0.916, 0.967, 1, 0.941, 0.927, 
+                                                                                                                   0.89, 0.955, 1, 0.927, 0.948, 0.876, 0.871, 0.946, 0.962, 1, 
+                                                                                                                   0.719, 0.854, 0.929, 0.867, 0.935, 0.804, 0.945, 1, 0.886, 0.918, 
+                                                                                                                   0.951, 0.853, 0.867, 1, 0.872, 0.722, 0.973, 0.788, 0.776, 0.784, 
+                                                                                                                   0.931, 0.97, 0.955, 0.933, 1, 0.836, 0.687, 0.982, 0.958, 0.754, 
+                                                                                                                   0.78, 0.933, 0.733, 0.87, 0.836, 0.942, 0.88, 0.747, 0.845, 1, 
+                                                                                                                   0.893, 0.673, 0.698, 0.784, 0.886, 0.559, 0.676, 0.947, 0.779, 
+                                                                                                                   0.875, 0.5, 0.946, 0.889, 0.761, 0.872, 0.706, 0.61, 0.852, 0.764, 
+                                                                                                                   0.885, 0.815, 1, 0.908, 0.817, 0.783, 0.764, 1, 1, 0.908, 1, 
+                                                                                                                   0.69, 0.562, 0.72, 0.965, 0.876, 1, 1, 1, 0.909, 1, 0.984, 1, 
+                                                                                                                   0.942, 0.941, 1, 0.958, 0.967, 0.94, 0.952, 0.567, 1, 0.936, 
+                                                                                                                   0.953, 0.836, 1, 0.965, 1, 0.653, 1, 1, 0.913, 0.949, 0.957, 
+                                                                                                                   1, 0.944, 1, 0.973, 1, 0.977, 1, 0.881, 0.948, 1, 1, 1, 1, 0.965, 
+                                                                                                                   0.963, 0.966, 1, 0.984, 0.794, 0.963, 0.924, 0.95, 1, 0.899, 
+                                                                                                                   1, 1, 1, 1, 0.893, 0.874, 0.742, 0.949, 0.792, 0.916, 0.883, 
+                                                                                                                   0.54, 0.844, 0.873, 0.834, 0.893, 0.842, 0.873, 0.767, NA, 0.939, 
+                                                                                                                   0.63, 0.804, 0.9, 0.839, 0.835, 0.632, 0.812, 0.813, 0.805, 0.801, 
+                                                                                                                   0.855, 0.881, 0.763, 0.619, 0.701, 0.784, 0.481, 0.73, 0.558, 
+                                                                                                                   0.804, 0.948, 0.756, 0.922, 0.901, 0.482, 0.887, 0.311, 0.976, 
+                                                                                                                   0.778, 0.674, 0.821, 0.635, 0.616, 0.549, 0.716, 0.856, 0.879, 
+                                                                                                                   0.453, 0.444, 0.634, 0.872, 0.595, 0.686, 0.86, 0.769, 0.745, 
+                                                                                                                   0.678, 0.53, 1, 0.796, 0.929, 0.902, 0.936, 0.426, 0.718, 0.941, 
+                                                                                                                   0.723, 1, 0.927, 0.752, 0.458, 0.694, 0.485, 0.856, 0.558, 0.609, 
+                                                                                                                   0.528, 0.852, 0.357, 0.809, 0.57, 0.848, 0.798, 0.627, 0.462, 
+                                                                                                                   0.528, 0.76, 0.505, 0.568, 0.369, 0.682, 0.594, NA, 0.058, 0.263, 
+                                                                                                                   0.61, 0.068, 0.403, 0.271, 0.634, 0.606, 0.265, 0.226, 0.544, 
+                                                                                                                   0.313, 0.275, 0.462, 0.357, 0.531, 0.308, NA, 0.358, 0.136, 1, 
+                                                                                                                   1, 1, 0.913, 0.921, 0.955, 1, 1, 0.848, 1, 0.771, 0.97, 0.991, 
+                                                                                                                   1, 1, 0.934, 0.973, 1, 0.932, 1, 1, 0.981, 1, 1, 1, 0.903, 1, 
+                                                                                                                   0.901, 0.857, 1, 1, 0.86, 0.82, 0.788, 0.925, NA, 0.886, 1, 0.971, 
+                                                                                                                   1, 0.919, 1, 1, 0.892, 1, 0.945, 0.912, 0.907, 0.964, 0.962, 
+                                                                                                                   0.895, 0.595, 0.965, 1, 0.925, 0.714, 1, 0.985, 0.908, 1, 0.778, 
+                                                                                                                   0.583, 0.901, 0.99, 0.373, 0.293, 1, 0.986, 0.96, 0.494, 0.911, 
+                                                                                                                   0.921, 0.925, 0.943, 0.801, 0.922, 0.821, 1, 1, 0.285, 0.165, 
+                                                                                                                   0.61, 0.332, 0.361, 0.18, 0.753, 0.559, 0.575, 0.32, 0.259, 0.553, 
+                                                                                                                   0.482, 0.462, 0.168, 0.449, 0.438, 0.913, 0.95, 0.83, 0.907, 
+                                                                                                                   0.747, 0.401, 0.963, 0.869, 0.436, 0.786, 0.873, 0.931, 0.912, 
+                                                                                                                   0.844, 0.646, 1, 1, 0.895, 0.723, 1, 1, 1, 1, 0.498, 0.956, 0.521, 
+                                                                                                                   0.389, 0.643, 0.569, 0.315, 0.311, 0.644, 0.651, 0.803, 0.48, 
+                                                                                                                   0.397, 0.75, 0.829, 0.343, 0.589, 0.544, 0.807, 0.256, 0.534, 
+                                                                                                                   0.359, 0.561, 0.693, 0.489, 0.221, 0.7, 0.478, 0.919, 0.608, 
+                                                                                                                   0.147, 0.71, 0.315, 0.737, 0.474, 0.478, 0.654, 0.309)), row.names = c(NA, 
+                                                                                                                                                                                          -519L), class = c("tbl_df", "tbl", "data.frame"))
+
+
+
+infos &lt;- pop|&gt; mutate(dtc1_vaccinated = NA_integer_, survivants_routine = NA_character_, couverture_ecv = NA_integer_)
+
+
+
+
+
+ui &lt;- page_sidebar(
+  useShinyjs(),
+
+  # Shiny example
+  theme = bs_theme(
+    bootswatch = "litera",
+  ),
+  sidebar = sidebar(
+    h5("Telechargez le fichier excel à remplir"),
+    downloadBttn("info", "Telechargez le fichier à remplir", icon = icon("download")),
+    h5("Lire le fichier rempli dans l'application"),
+    fileInput("info_update", "Lire le fichier rempli", multiple = F, accept = ".xlsx", placeholder = "No file"),
+    h5("Cliquez sur le boutton si vous avez rempli les données de l'ECV"),
+    prettySwitch(inputId = "ecv", label = "", fill = TRUE, status = "success", value = FALSE, bigger = TRUE),
+    h5("Lancez l'ajustement en appuyant sur le boutton"),
+    input_task_button("go", label = "Ajuster", icon = icon("play"), type = "secondary", label_busy = "Ajustement des population...")
+  ),
+  card(
+    card_header(
+      h2("Tableau des populations ajustées"),
+      downloadBttn("adjusted", "Telechargez les populations ajustées", icon = icon("download"))
+    ),
+    card_body(
+      DTOutput("tab_adjusted")
+    )
+  )
+)
+
+
+
+
+
+
+
+server &lt;- function(input, output, session) {
+  output$info &lt;- downloadHandler(
+    filename = function() {
+      paste0("infos.xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(infos, file)
+    }
+  )
+
+
+  data &lt;- reactiveValues(infos = NULL, merged = NULL)
+
+  observeEvent(input$go, {
+    
+    if (is.null(input$info_update)) {
+      show_alert(
+        title = "Pas de fichier",
+        text = "Veuillez lire le fichier excel",
+        type = "warning"
+      )
+      return()
+    }
+
+    req(input$info_update)
+
+    tryCatch({
+      data$infos &lt;- readxl::read_excel(input$info_update$datapath)
+
+
+    if (input$ecv) {
+      data$merged &lt;- data$infos
+    } else {
+      data$infos &lt;- select(data$infos, -couverture_ecv)
+      data$merged &lt;- merge(data$infos, pop, by.x = "district", by.y = "district")
+    }
+      
+      },
+    error = function(e) {
+      print(paste("Error in file processing:", e$message))
+  })})
+
+
+  tab &lt;- reactive({
+    req(data$merged)
+
+    
+
+
+
+    tryCatch({
+      var &lt;- c("survivants_adj", "naissances_adj")
+
+
+
+      results &lt;-  data$merged |&gt;
+        mutate(
+          pop_ecv = dtc1_vaccinated / couverture_ecv
+        ) |&gt;
+        mutate(
+          variation = (survivants_routine - pop_ecv) / survivants_routine
+        ) |&gt;
+        mutate(
+          survivants_adj = case_when(
+
+            between(variation, -0.1, 0.1) ~ survivants_routine,
+            variation &lt; -0.1 &amp; variation &gt; -0.2 ~ survivants_routine + abs(variation) * survivants_routine,
+            variation &lt;= -0.2 ~ survivants_routine + 0.2 * survivants_routine,
+            variation &gt; 0.1 &amp; variation &lt; 0.2 ~ survivants_routine - abs(variation) * survivants_routine,
+            variation &gt; 0.2 ~ survivants_routine - 0.2 * survivants_routine,
+            .default = survivants_routine + abs(variation) * survivants_routine
+          )
+        ) |&gt;
+        mutate(survivants_adj = ifelse(survivants_adj &lt;= dtc1_vaccinated, dtc1_vaccinated, survivants_adj)) |&gt;
+        mutate(
+          naissances_adj = survivants_adj + (55 / 1000) * survivants_adj
+        ) |&gt;
+        mutate(
+          across(c(survivants_adj, naissances_adj), ~ .x * 1.03, .names = "{var}_annee1")
+        ) |&gt;
+        mutate(
+          across(ends_with("annee1"), ~ .x * 1.03, .names = "{var}_annee2")
+        )|&gt;
+        filter(!is.na(dtc1_vaccinated))
+
+
+
+
+      return(results)
+
+      }, error = function(e) {
+        print(paste("Error in tab calculation:", e$message))
+        return(NULL)
+      })
+
+
+  })
+
+
+
+
+
+
+  output$adjusted &lt;- downloadHandler(
+    filename = function() {
+      paste0("pop_ajusted.xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(tab(), file)
+    }
+  )
+
+
+  output$tab_adjusted &lt;- renderDT({
+
+    req(tab())
+  tab()
+  })
+
+
+
+
+}
+
+shinyApp(ui, server)</code></pre>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-label="copyright"></i> WHO-IST CA 2024<br> Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.afro.who.int/">
+<p><img src="img/static/logo-en.svg" alt="WHO-AFRO" width="250" height="62.5">&nbsp;</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

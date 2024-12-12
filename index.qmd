@@ -246,7 +246,7 @@ Après avoir verifier l'exhaustivité des districts dans les differentes sources
 
 ```{r}
 #| label: fig-data
-#| fig-cap: 
+#| fig-cap:
 #|   - "Verification des sources de données"
 #|   - "Utilisation des filtres pour identifier les valeurs aberrantes et les valeurs manquantes"
 #| fig-show: "hold"
@@ -258,7 +258,6 @@ library(here)
 knitr::include_graphics(here("img/verif", "datasources.gif"))
 
 knitr::include_graphics(here("img/verif", "assess.gif"))
-
 ```
 
 Après avoir évaluer la qualité des données, il en ressort que les zones de santé de Damas, Drodro, Lolwa, Bambo, Binza, Birambizo, Katoyi, Kibirizi, Mweso, et Lowa n'ont pas de données sur les couvertures vaccinales aux BCG et DTC-1 lors de l'enquête de couverture vaccinale de 2023. Que faire donc en l'absence des données de couvertures vaccinales de l'ECV 2023. On pourrait:
@@ -282,7 +281,7 @@ Les figures suivantes montrent chaque étape de remplissage de la feuille de cal
 
 ```{r}
 #| label: fig-fill
-#| fig-cap: 
+#| fig-cap:
 #|   - "Remplissage des informations du district"
 #|   - "Remplissage de l'année"
 #|   - "Remplissage des données administratives (nombre de vaccinés, populations cibles DHIS 2)"
@@ -306,9 +305,6 @@ knitr::include_graphics(here("img/survivants", "input_ecv.png"))
 knitr::include_graphics(here("img/survivants", "input_ecv3.png"))
 
 knitr::include_graphics(here("img/survivants", "input_ihme.png"))
-
-
-
 ```
 
 
@@ -318,7 +314,7 @@ Lorsque toute les données nécéssaires à l'estimation on peut alors calculer 
 
 ```{r}
 #| label: fig-pop
-#| fig-cap: 
+#| fig-cap:
 #|   - "Estimation des populations de nourrissons survivants ajustées à partir des CV DTC1 de l'ECV 2023"
 #|   - "Estimation des populations de nourrissons survivants ajustées à partir des CV au DTC1 de l'IHME"
 
@@ -331,8 +327,6 @@ library(here)
 knitr::include_graphics(here("img/survivants", "pop_ecv.png"))
 
 knitr::include_graphics(here("img/survivants", "pop_ihme.png"))
-
-
 ```
 
 
@@ -347,7 +341,7 @@ $$\text{Tx} = \frac{\text{Population Administrative(N)- Population Ajustée}(N')
 qui mesure en pourcentage la difference entre la population ajustée et la population de routine. Afin de calculer les taux de variation pour chacune des zones de santé entre la population ECV et la population administrative on utilisera les colones F et O pour la zone de santé i dans la feuille de calcul excel $\text{Tx}_i = \frac{(F_i - O_i)}{F_i}$ et pour les populations IHME ce sera plus tot $\text{Tx}_i = \frac{(F_i - V_i)}{F_i}$. Les taux de variations aux intervalles de confiances doivent être estimés de façon similaire. $\text{Tx}$ n'est borné ni dans le sens négatif, ni dans le sens positif. Toutefois quand ce taux est inférieur à `0` il indique la population administrative doit être augmentée et lorsqu'il est positif, la population administrative devra être réduite. 
 ```{r}
 #| label: fig-var
-#| fig-cap: 
+#| fig-cap:
 #|   - "Estimation du Taux de variation entre les populations administratives et les populations ajustées ECV 2023"
 #|   - "Estimation du Taux de variation entre les populations administratives et les populations ajustées IHME 2023"
 
@@ -360,8 +354,6 @@ library(here)
 knitr::include_graphics(here("img/variation", "variation_ecv.png"))
 
 knitr::include_graphics(here("img/variation", "variation_ihme.png"))
-
-
 ```
 
 ## Utilisation du taux de variation des populations pour la prise de décision

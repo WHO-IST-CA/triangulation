@@ -19,6 +19,8 @@ website:
       - text: Tutoriel
         href: index.qmd
         icon: bi-house-door-fill
+      - text: "Outil d'ajustement"
+        href: pop_calculator.qmd
 
 
 
@@ -50,18 +52,9 @@ format:
     fig-format: svg
     lang: fr
     fig-align: center
-    keep-md: true
+    keep-md: false
 
-    other-links:
-      - text: "Sources des données"
-        icon: download
-        href: download/consolidated_pop_and_vaccination_data.xlsx
-      - text: "Feuille de calcul pour l'ajustement"
-        icon: download
-        href: download/Tableau_ajustement_Cibles_PEV_workshop.xlsx
-      - text: 'Population Ajustée RDC'
-        href: download/pop_ajusted_rdc.csv
-        icon: download
+
 
 execute:
   freeze: auto
