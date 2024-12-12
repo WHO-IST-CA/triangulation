@@ -604,7 +604,6 @@ infos &lt;- pop|&gt; mutate(dtc1_vaccinated = NA_integer_, survivants_routine = 
 
 ui &lt;- page_sidebar(
   useShinyjs(),
-  useShinyWidgets(),
 
   # Shiny example
   theme = bs_theme(
@@ -612,7 +611,7 @@ ui &lt;- page_sidebar(
   ),
   sidebar = sidebar(
     h5("Telechargez le fichier excel à remplir"),
-    downloadBttn("info", "Telechargez le fichier à remplir", icon = icon("download")),
+    downloadButton("info", "Telechargez le fichier à remplir", icon = icon("download")),
     h5("Lire le fichier rempli dans l'application"),
     fileInput("info_update", "Lire le fichier rempli", multiple = F, accept = ".xlsx", placeholder = "No file"),
     h5("Cliquez sur le boutton si vous avez rempli les données de l'ECV"),
@@ -623,7 +622,7 @@ ui &lt;- page_sidebar(
   card(
     card_header(
       h2("Tableau des populations ajustées"),
-      downloadBttn("adjusted", "Telechargez les populations ajustées", icon = icon("download"))
+      downloadButton("adjusted", "Telechargez les populations ajustées", icon = icon("download"))
     ),
     card_body(
       DTOutput("tab_adjusted")
