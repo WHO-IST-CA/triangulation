@@ -88,7 +88,7 @@ server <- function(input, output, session) {
       data$merged <- data$infos
     } else {
       data$infos <- select(data$infos, -couverture_ecv)
-      data$merged <- merge(data$infos, pop, by.x = "district", by.y = "district")
+      data$merged <- merge(data$infos, pop, by.x = c("province","district"), by.y = c("province","district"), no.dups = T)
     }
       print("Merge completed")
       print(head(data$merged))  # Print first few rows

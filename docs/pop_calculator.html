@@ -694,7 +694,7 @@ server &lt;- function(input, output, session) {
       data$merged &lt;- data$infos
     } else {
       data$infos &lt;- select(data$infos, -couverture_ecv)
-      data$merged &lt;- merge(data$infos, pop, by.x = "district", by.y = "district")
+      data$merged &lt;- merge(data$infos, pop, by.x =  c("province","district"), by.y =  c("province","district"), no.dups = T)
     }
       
       },
