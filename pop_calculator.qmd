@@ -15,9 +15,38 @@ other-links:
 ---
 
 
+***Avant d'utiliser l'outil d'ajustement des populations cibles du pev, il faut noter que cet outil utilse uniquement les couvertures de l'ECV pour procéder à l'ajustement, la méthode d'ajustement est décrite dans le tutoriel <https://who-ist-ca.github.io/triangulation/>. Si les données de l'ECV ne sont pas disponibles, l'application procèdera à l'ajustement des population en utilisant les résultats de l'ECV 2023***
+
+### Procédure d'utilisation
+
+1. Télécharger le fichier d'information à remplir <https://who-ist-ca.github.io/triangulation/data/infos.xlsx>
+2. Remplir le fichier avec les informations appropriées sur le nombre de vaccinés au DTC1 (dtc1_vaccinated), cible de nourissons survivants en routine (survivants_routine), et si disponible la couverture vaccinale de l'ECV (couverture_ecv)
+3. Lorsque le fichier est rempli, il faut l'enregistrer et le téléverser dans l'application
+4. Si on a les données de l'ECV rempli dans le fichier, il faut cliquer sur la puce
+5. Cliquer sur ajuster pour procéder à l'ajustement
+
+### Codebook 
 
 
 
+- province : Province ou région 
+- district : district de santé
+- dtc1_vaccinated: Total de vaccinés au DTC1 au cours de l'année
+- survivants_routine: Cible des nourrissons survivants de l'année
+- couverture_ecv: Couverture vaccinale au DTC2 de l'ECV
+- pop_ecv: survivants brutes estimées par l'ECV 
+- variation: Taux de variation entre les survivants administratifs et survivants estimés par l'ECV
+- survivants_adj: Survivants ajustés avec l'ECV pour l'année n
+- naissances_adj: Naissances vivantes ajustées avec l'ECV et le taux de mortalité de l'EDS pour l'année n
+- survivants_adj_annee1: Survivants ajustés avec l'ECV et le taux d'accroissement pour l'année n + 1
+- naissances_adj_annee1: Naissances vivantes ajustées avec l'ECV, le taux de mortalité de l'EDS, et le taux d'accroissement pour l'année n + 1
+- survivants_adj_annee2: Survivants ajustés avec l'ECV et le taux d'accroissement pour l'année n + 2
+- naissances_adj_annee2: Naissances vivantes ajustées avec l'ECV, le taux de mortalité de l'EDS, et le taux d'accroissement pour l'année n + 2
+
+
+
+<br>
+<br>
 
 
 
@@ -27,7 +56,7 @@ other-links:
 
 ```{shinylive-r}
 #| standalone: true
-#| viewerHeight: 800
+#| viewerHeight: 1000
 
  
 library(shiny)

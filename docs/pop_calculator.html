@@ -161,11 +161,40 @@ cookieconsent.run({
 </header>
 
 
+<p><strong><em>Avant d’utiliser l’outil d’ajustement des populations cibles du pev, il faut noter que cet outil utilse uniquement les couvertures de l’ECV pour procéder à l’ajustement, la méthode d’ajustement est décrite dans le tutoriel <a href="https://who-ist-ca.github.io/triangulation/" class="uri">https://who-ist-ca.github.io/triangulation/</a>. Si les données de l’ECV ne sont pas disponibles, l’application procèdera à l’ajustement des population en utilisant les résultats de l’ECV 2023</em></strong></p>
+<section id="procédure-dutilisation" class="level3">
+<h3 class="anchored" data-anchor-id="procédure-dutilisation">Procédure d’utilisation</h3>
+<ol type="1">
+<li>Télécharger le fichier d’information à remplir <a href="https://who-ist-ca.github.io/triangulation/data/infos.xlsx" class="uri">https://who-ist-ca.github.io/triangulation/data/infos.xlsx</a></li>
+<li>Remplir le fichier avec les informations appropriées sur le nombre de vaccinés au DTC1 (dtc1_vaccinated), cible de nourissons survivants en routine (survivants_routine), et si disponible la couverture vaccinale de l’ECV (couverture_ecv)</li>
+<li>Lorsque le fichier est rempli, il faut l’enregistrer et le téléverser dans l’application</li>
+<li>Si on a les données de l’ECV rempli dans le fichier, il faut cliquer sur la puce</li>
+<li>Cliquer sur ajuster pour procéder à l’ajustement</li>
+</ol>
+</section>
+<section id="codebook" class="level3">
+<h3 class="anchored" data-anchor-id="codebook">Codebook</h3>
+<ul>
+<li>province : Province ou région</li>
+<li>district : district de santé</li>
+<li>dtc1_vaccinated: Total de vaccinés au DTC1 au cours de l’année</li>
+<li>survivants_routine: Cible des nourrissons survivants de l’année</li>
+<li>couverture_ecv: Couverture vaccinale au DTC2 de l’ECV</li>
+<li>pop_ecv: survivants brutes estimées par l’ECV</li>
+<li>variation: Taux de variation entre les survivants administratifs et survivants estimés par l’ECV</li>
+<li>survivants_adj: Survivants ajustés avec l’ECV pour l’année n</li>
+<li>naissances_adj: Naissances vivantes ajustées avec l’ECV et le taux de mortalité de l’EDS pour l’année n</li>
+<li>survivants_adj_annee1: Survivants ajustés avec l’ECV et le taux d’accroissement pour l’année n + 1</li>
+<li>naissances_adj_annee1: Naissances vivantes ajustées avec l’ECV, le taux de mortalité de l’EDS, et le taux d’accroissement pour l’année n + 1</li>
+<li>survivants_adj_annee2: Survivants ajustés avec l’ECV et le taux d’accroissement pour l’année n + 2</li>
+<li>naissances_adj_annee2: Naissances vivantes ajustées avec l’ECV, le taux de mortalité de l’EDS, et le taux d’accroissement pour l’année n + 2</li>
+</ul>
+<p><br> <br></p>
 <pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
 #|   shinylive does not work in self-contained HTML documents.
 #|   Please set `embed-resources: false` in your metadata.
 #| standalone: true
-#| viewerHeight: 800
+#| viewerHeight: 1000
 
  
 library(shiny)
@@ -757,6 +786,7 @@ output$tab_adjusted &lt;- renderDT({
 shinyApp(ui, server)</code></pre>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
