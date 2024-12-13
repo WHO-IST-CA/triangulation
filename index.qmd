@@ -798,7 +798,7 @@ df_pop |> filter(bcg_adj < pop_adj)|> select(province,zone_sante, pop_adj, bcg_a
 
 On constate qu il y a `298` districts qui ont un nombre de survivants ajustés plus élevé que les naissances vivantes ajustés, et la mortalité implicite est négative. De ce fait il judicieux d'estimer les naissances vivantes en utilisant la mortalité infantile de l'EDS qui sera appliquée aux survivants afin d'estimer les naissances vivantes. 
 
-$$ \text{Naissances Vivantes} = \text{Survivants Ajustés} + \text{Taux de mortalité} * \text{Survivants Ajustés}$$
+$$ \text{Naissances Vivantes} = \frac{\text{Survivants Ajustés}}{1-\text{Taux de mortalité}}$$
 
 Selon l'EDS le taux de mortalité infantile en RDC est de 55/1000 naissances vivantes. 
 
@@ -806,7 +806,7 @@ Selon l'EDS le taux de mortalité infantile en RDC est de 55/1000 naissances viv
 ```{webr}
 # Estimation des survivants ajustés selon l'EDS
 
-df_pop$bcg_eds <-  df_pop$pop_adj + (55/1000) * df_pop$pop_adj 
+df_pop$bcg_eds <-  df_pop$pop_adj/(1 - (55/1000)) 
 
 
   df_pop |> select(province, zone_sante, bcg_eds, pop_adj)|>

@@ -165,10 +165,10 @@ cookieconsent.run({
 <section id="procédure-dutilisation" class="level3">
 <h3 class="anchored" data-anchor-id="procédure-dutilisation">Procédure d’utilisation</h3>
 <ol type="1">
-<li>Télécharger le fichier d’information à remplir <a href="https://who-ist-ca.github.io/triangulation/data/infos.xlsx" class="uri">https://who-ist-ca.github.io/triangulation/data/infos.xlsx</a></li>
+<li>Télécharger le fichier d’information à remplir <a href="https://who-ist-ca.github.io/triangulation/data/infos.xlsx" class="uri">https://who-ist-ca.github.io/triangulation/data/infos.xlsx</a>. <strong>NB: Les couvertures de l’ECV doivent être remplies en proportion et non en pourcentage</strong></li>
 <li>Remplir le fichier avec les informations appropriées sur le nombre de vaccinés au DTC1 (dtc1_vaccinated), cible de nourissons survivants en routine (survivants_routine), et si disponible la couverture vaccinale de l’ECV (couverture_ecv)</li>
 <li>Lorsque le fichier est rempli, il faut l’enregistrer et le téléverser dans l’application</li>
-<li>Si on a les données de l’ECV rempli dans le fichier, il faut cliquer sur la puce</li>
+<li>Si on a les données de l’ECV rempli dans le fichier, il faut cliquer sur le boutton qui doit laisser apparaitre une couleur verte</li>
 <li>Cliquer sur ajuster pour procéder à l’ajustement</li>
 </ol>
 </section>
@@ -735,7 +735,7 @@ server &lt;- function(input, output, session) {
         ) |&gt;
         mutate(survivants_adj = ifelse(survivants_adj &lt;= dtc1_vaccinated, dtc1_vaccinated, survivants_adj)) |&gt;
         mutate(
-          naissances_adj = survivants_adj + (55 / 1000) * survivants_adj
+          naissances_adj = abs(survivants_adj /(1- (55 / 1000) ))
         ) |&gt;
         mutate(
           across(c(survivants_adj, naissances_adj), ~ .x * 1.03, .names = "{var}_annee1")
